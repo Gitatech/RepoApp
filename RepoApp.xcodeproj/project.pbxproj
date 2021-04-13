@@ -13,6 +13,13 @@
 		DA54B45826247BCF00A8C3C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA54B45726247BCF00A8C3C6 /* Assets.xcassets */; };
 		DA54B45B26247BCF00A8C3C6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA54B45926247BCF00A8C3C6 /* LaunchScreen.storyboard */; };
 		DA893E8E2625B3020070F40E /* UIViewController+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA893E8D2625B3020070F40E /* UIViewController+Ex.swift */; };
+		DA893E942625D7CE0070F40E /* RAEmptyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA893E932625D7CE0070F40E /* RAEmptyListView.swift */; };
+		DA893E972625D84D0070F40E /* RARepoListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA893E962625D84D0070F40E /* RARepoListCell.swift */; };
+		DA893E9B2625DA860070F40E /* RAViewWithStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA893E9A2625DA860070F40E /* RAViewWithStackView.swift */; };
+		DA893E9F2625DB7A0070F40E /* UIStackView+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA893E9E2625DB7A0070F40E /* UIStackView+Ex.swift */; };
+		DA893EA32625DD4C0070F40E /* RALabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA893EA22625DD4C0070F40E /* RALabel.swift */; };
+		DA893EA62625DE240070F40E /* RADescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA893EA52625DE240070F40E /* RADescriptionView.swift */; };
+		DA893EAA2625E1E40070F40E /* RAImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA893EA92625E1E40070F40E /* RAImageView.swift */; };
 		DADD54CC26258537008079BA /* UIView+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADD54CB26258537008079BA /* UIView+Ex.swift */; };
 		DADD54CF262585E5008079BA /* UIEdgeInsets+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADD54CE262585E5008079BA /* UIEdgeInsets+Ex.swift */; };
 		DADD54D22625864C008079BA /* RABaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADD54D12625864C008079BA /* RABaseViewController.swift */; };
@@ -24,7 +31,6 @@
 		DADD54ED26259AC2008079BA /* RARepositoriesDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADD54EC26259AC2008079BA /* RARepositoriesDetailsViewController.swift */; };
 		DADD54F126259F02008079BA /* RARepoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADD54F026259F02008079BA /* RARepoViewModel.swift */; };
 		DADD54F52625A2F7008079BA /* RAInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADD54F42625A2F7008079BA /* RAInterface.swift */; };
-		DADD54F92625A54D008079BA /* RAInitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADD54F82625A54D008079BA /* RAInitialViewController.swift */; };
 		DADD55012625ACD5008079BA /* Array+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADD55002625ACD5008079BA /* Array+Ex.swift */; };
 /* End PBXBuildFile section */
 
@@ -38,6 +44,13 @@
 		DA54B45A26247BCF00A8C3C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DA54B45C26247BCF00A8C3C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DA893E8D2625B3020070F40E /* UIViewController+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ex.swift"; sourceTree = "<group>"; };
+		DA893E932625D7CE0070F40E /* RAEmptyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RAEmptyListView.swift; sourceTree = "<group>"; };
+		DA893E962625D84D0070F40E /* RARepoListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RARepoListCell.swift; sourceTree = "<group>"; };
+		DA893E9A2625DA860070F40E /* RAViewWithStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RAViewWithStackView.swift; sourceTree = "<group>"; };
+		DA893E9E2625DB7A0070F40E /* UIStackView+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Ex.swift"; sourceTree = "<group>"; };
+		DA893EA22625DD4C0070F40E /* RALabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RALabel.swift; sourceTree = "<group>"; };
+		DA893EA52625DE240070F40E /* RADescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RADescriptionView.swift; sourceTree = "<group>"; };
+		DA893EA92625E1E40070F40E /* RAImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RAImageView.swift; sourceTree = "<group>"; };
 		DADD54CB26258537008079BA /* UIView+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ex.swift"; sourceTree = "<group>"; };
 		DADD54CE262585E5008079BA /* UIEdgeInsets+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIEdgeInsets+Ex.swift"; sourceTree = "<group>"; };
 		DADD54D12625864C008079BA /* RABaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RABaseViewController.swift; sourceTree = "<group>"; };
@@ -49,7 +62,6 @@
 		DADD54EC26259AC2008079BA /* RARepositoriesDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RARepositoriesDetailsViewController.swift; sourceTree = "<group>"; };
 		DADD54F026259F02008079BA /* RARepoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RARepoViewModel.swift; sourceTree = "<group>"; };
 		DADD54F42625A2F7008079BA /* RAInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RAInterface.swift; sourceTree = "<group>"; };
-		DADD54F82625A54D008079BA /* RAInitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RAInitialViewController.swift; sourceTree = "<group>"; };
 		DADD55002625ACD5008079BA /* Array+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Ex.swift"; sourceTree = "<group>"; };
 		FDE15B54A0F97A217C01ED9D /* Pods-RepoApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RepoApp.debug.xcconfig"; path = "Target Support Files/Pods-RepoApp/Pods-RepoApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -118,7 +130,6 @@
 		DA54B4752624BD9100A8C3C6 /* Features */ = {
 			isa = PBXGroup;
 			children = (
-				DADD54F72625A539008079BA /* Init */,
 				DA54B47C2624C17E00A8C3C6 /* Lists */,
 				DA54B47D2624C18A00A8C3C6 /* Details */,
 				DADD54E926259A9E008079BA /* RARepositoriesPresenter.swift */,
@@ -149,10 +160,11 @@
 		DA54B4782624BE3700A8C3C6 /* Extentions */ = {
 			isa = PBXGroup;
 			children = (
-				DADD54CB26258537008079BA /* UIView+Ex.swift */,
-				DADD54CE262585E5008079BA /* UIEdgeInsets+Ex.swift */,
-				DADD54DB26258885008079BA /* UIFont+Ex.swift */,
 				DADD55002625ACD5008079BA /* Array+Ex.swift */,
+				DADD54DB26258885008079BA /* UIFont+Ex.swift */,
+				DADD54CE262585E5008079BA /* UIEdgeInsets+Ex.swift */,
+				DADD54CB26258537008079BA /* UIView+Ex.swift */,
+				DA893E9E2625DB7A0070F40E /* UIStackView+Ex.swift */,
 				DA893E8D2625B3020070F40E /* UIViewController+Ex.swift */,
 			);
 			path = Extentions;
@@ -168,8 +180,9 @@
 		DA54B47C2624C17E00A8C3C6 /* Lists */ = {
 			isa = PBXGroup;
 			children = (
-				DADD54CA262583AE008079BA /* Cells */,
+				DA893E992625D8A50070F40E /* Models */,
 				DA54B4812624C20B00A8C3C6 /* Interactor */,
+				DADD54CA262583AE008079BA /* Cells */,
 				DA54B4802624C20400A8C3C6 /* Views */,
 				DA54B47E2624C19700A8C3C6 /* Controllers */,
 			);
@@ -196,6 +209,7 @@
 		DA54B4802624C20400A8C3C6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				DA893E932625D7CE0070F40E /* RAEmptyListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -210,7 +224,11 @@
 		DA54B4822624C33D00A8C3C6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				DA893EA22625DD4C0070F40E /* RALabel.swift */,
+				DA893EA52625DE240070F40E /* RADescriptionView.swift */,
 				DADD54E526259685008079BA /* RAView.swift */,
+				DA893E9A2625DA860070F40E /* RAViewWithStackView.swift */,
+				DA893EA92625E1E40070F40E /* RAImageView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -264,9 +282,17 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		DA893E992625D8A50070F40E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		DADD54CA262583AE008079BA /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				DA893E962625D84D0070F40E /* RARepoListCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -277,14 +303,6 @@
 				DADD54D52625869E008079BA /* RATableViewCell.swift */,
 			);
 			path = Cells;
-			sourceTree = "<group>";
-		};
-		DADD54F72625A539008079BA /* Init */ = {
-			isa = PBXGroup;
-			children = (
-				DADD54F82625A54D008079BA /* RAInitialViewController.swift */,
-			);
-			path = Init;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -383,21 +401,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA54B45326247BCE00A8C3C6 /* RAListViewController.swift in Sources */,
+				DA893EA62625DE240070F40E /* RADescriptionView.swift in Sources */,
 				DA893E8E2625B3020070F40E /* UIViewController+Ex.swift in Sources */,
 				DADD54CF262585E5008079BA /* UIEdgeInsets+Ex.swift in Sources */,
+				DA893E9B2625DA860070F40E /* RAViewWithStackView.swift in Sources */,
 				DADD54E626259685008079BA /* RAView.swift in Sources */,
 				DA54B44F26247BCE00A8C3C6 /* AppDelegate.swift in Sources */,
-				DADD54F92625A54D008079BA /* RAInitialViewController.swift in Sources */,
 				DADD54F126259F02008079BA /* RARepoViewModel.swift in Sources */,
 				DADD54CC26258537008079BA /* UIView+Ex.swift in Sources */,
 				DADD54D62625869E008079BA /* RATableViewCell.swift in Sources */,
+				DA893E9F2625DB7A0070F40E /* UIStackView+Ex.swift in Sources */,
 				DADD54EA26259A9E008079BA /* RARepositoriesPresenter.swift in Sources */,
+				DA893E942625D7CE0070F40E /* RAEmptyListView.swift in Sources */,
+				DA893EAA2625E1E40070F40E /* RAImageView.swift in Sources */,
+				DA893E972625D84D0070F40E /* RARepoListCell.swift in Sources */,
 				DADD54ED26259AC2008079BA /* RARepositoriesDetailsViewController.swift in Sources */,
 				DADD55012625ACD5008079BA /* Array+Ex.swift in Sources */,
 				DADD54D9262587E4008079BA /* RABaseInteractor.swift in Sources */,
 				DADD54D22625864C008079BA /* RABaseViewController.swift in Sources */,
 				DADD54F52625A2F7008079BA /* RAInterface.swift in Sources */,
 				DADD54DC26258885008079BA /* UIFont+Ex.swift in Sources */,
+				DA893EA32625DD4C0070F40E /* RALabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
