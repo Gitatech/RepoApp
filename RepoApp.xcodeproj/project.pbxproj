@@ -9,9 +9,23 @@
 /* Begin PBXBuildFile section */
 		0382B604750DA17984991D4B /* libPods-RepoApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 79D64C255A4DEEFE45D4F51A /* libPods-RepoApp.a */; };
 		DA54B44F26247BCE00A8C3C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA54B44E26247BCE00A8C3C6 /* AppDelegate.swift */; };
-		DA54B45326247BCE00A8C3C6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA54B45226247BCE00A8C3C6 /* ViewController.swift */; };
+		DA54B45326247BCE00A8C3C6 /* RAListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA54B45226247BCE00A8C3C6 /* RAListViewController.swift */; };
 		DA54B45826247BCF00A8C3C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA54B45726247BCF00A8C3C6 /* Assets.xcassets */; };
 		DA54B45B26247BCF00A8C3C6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA54B45926247BCF00A8C3C6 /* LaunchScreen.storyboard */; };
+		DA893E8E2625B3020070F40E /* UIViewController+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA893E8D2625B3020070F40E /* UIViewController+Ex.swift */; };
+		DADD54CC26258537008079BA /* UIView+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADD54CB26258537008079BA /* UIView+Ex.swift */; };
+		DADD54CF262585E5008079BA /* UIEdgeInsets+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADD54CE262585E5008079BA /* UIEdgeInsets+Ex.swift */; };
+		DADD54D22625864C008079BA /* RABaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADD54D12625864C008079BA /* RABaseViewController.swift */; };
+		DADD54D62625869E008079BA /* RATableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADD54D52625869E008079BA /* RATableViewCell.swift */; };
+		DADD54D9262587E4008079BA /* RABaseInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADD54D8262587E4008079BA /* RABaseInteractor.swift */; };
+		DADD54DC26258885008079BA /* UIFont+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADD54DB26258885008079BA /* UIFont+Ex.swift */; };
+		DADD54E626259685008079BA /* RAView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADD54E526259685008079BA /* RAView.swift */; };
+		DADD54EA26259A9E008079BA /* RARepositoriesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADD54E926259A9E008079BA /* RARepositoriesPresenter.swift */; };
+		DADD54ED26259AC2008079BA /* RARepositoriesDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADD54EC26259AC2008079BA /* RARepositoriesDetailsViewController.swift */; };
+		DADD54F126259F02008079BA /* RARepoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADD54F026259F02008079BA /* RARepoViewModel.swift */; };
+		DADD54F52625A2F7008079BA /* RAInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADD54F42625A2F7008079BA /* RAInterface.swift */; };
+		DADD54F92625A54D008079BA /* RAInitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADD54F82625A54D008079BA /* RAInitialViewController.swift */; };
+		DADD55012625ACD5008079BA /* Array+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADD55002625ACD5008079BA /* Array+Ex.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,10 +33,24 @@
 		79D64C255A4DEEFE45D4F51A /* libPods-RepoApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RepoApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA54B44B26247BCE00A8C3C6 /* RepoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RepoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA54B44E26247BCE00A8C3C6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DA54B45226247BCE00A8C3C6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DA54B45226247BCE00A8C3C6 /* RAListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RAListViewController.swift; sourceTree = "<group>"; };
 		DA54B45726247BCF00A8C3C6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DA54B45A26247BCF00A8C3C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DA54B45C26247BCF00A8C3C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DA893E8D2625B3020070F40E /* UIViewController+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ex.swift"; sourceTree = "<group>"; };
+		DADD54CB26258537008079BA /* UIView+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ex.swift"; sourceTree = "<group>"; };
+		DADD54CE262585E5008079BA /* UIEdgeInsets+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIEdgeInsets+Ex.swift"; sourceTree = "<group>"; };
+		DADD54D12625864C008079BA /* RABaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RABaseViewController.swift; sourceTree = "<group>"; };
+		DADD54D52625869E008079BA /* RATableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RATableViewCell.swift; sourceTree = "<group>"; };
+		DADD54D8262587E4008079BA /* RABaseInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RABaseInteractor.swift; sourceTree = "<group>"; };
+		DADD54DB26258885008079BA /* UIFont+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Ex.swift"; sourceTree = "<group>"; };
+		DADD54E526259685008079BA /* RAView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RAView.swift; sourceTree = "<group>"; };
+		DADD54E926259A9E008079BA /* RARepositoriesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RARepositoriesPresenter.swift; sourceTree = "<group>"; };
+		DADD54EC26259AC2008079BA /* RARepositoriesDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RARepositoriesDetailsViewController.swift; sourceTree = "<group>"; };
+		DADD54F026259F02008079BA /* RARepoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RARepoViewModel.swift; sourceTree = "<group>"; };
+		DADD54F42625A2F7008079BA /* RAInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RAInterface.swift; sourceTree = "<group>"; };
+		DADD54F82625A54D008079BA /* RAInitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RAInitialViewController.swift; sourceTree = "<group>"; };
+		DADD55002625ACD5008079BA /* Array+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Ex.swift"; sourceTree = "<group>"; };
 		FDE15B54A0F97A217C01ED9D /* Pods-RepoApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RepoApp.debug.xcconfig"; path = "Target Support Files/Pods-RepoApp/Pods-RepoApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -90,8 +118,11 @@
 		DA54B4752624BD9100A8C3C6 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				DADD54F72625A539008079BA /* Init */,
 				DA54B47C2624C17E00A8C3C6 /* Lists */,
 				DA54B47D2624C18A00A8C3C6 /* Details */,
+				DADD54E926259A9E008079BA /* RARepositoriesPresenter.swift */,
+				DADD54F026259F02008079BA /* RARepoViewModel.swift */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -118,6 +149,11 @@
 		DA54B4782624BE3700A8C3C6 /* Extentions */ = {
 			isa = PBXGroup;
 			children = (
+				DADD54CB26258537008079BA /* UIView+Ex.swift */,
+				DADD54CE262585E5008079BA /* UIEdgeInsets+Ex.swift */,
+				DADD54DB26258885008079BA /* UIFont+Ex.swift */,
+				DADD55002625ACD5008079BA /* Array+Ex.swift */,
+				DA893E8D2625B3020070F40E /* UIViewController+Ex.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -132,6 +168,7 @@
 		DA54B47C2624C17E00A8C3C6 /* Lists */ = {
 			isa = PBXGroup;
 			children = (
+				DADD54CA262583AE008079BA /* Cells */,
 				DA54B4812624C20B00A8C3C6 /* Interactor */,
 				DA54B4802624C20400A8C3C6 /* Views */,
 				DA54B47E2624C19700A8C3C6 /* Controllers */,
@@ -151,7 +188,7 @@
 		DA54B47E2624C19700A8C3C6 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				DA54B45226247BCE00A8C3C6 /* ViewController.swift */,
+				DA54B45226247BCE00A8C3C6 /* RAListViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -173,6 +210,7 @@
 		DA54B4822624C33D00A8C3C6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				DADD54E526259685008079BA /* RAView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -180,6 +218,7 @@
 		DA54B4832624C34500A8C3C6 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				DADD54D12625864C008079BA /* RABaseViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -187,6 +226,7 @@
 		DA54B4842624C7A900A8C3C6 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				DADD54D8262587E4008079BA /* RABaseInteractor.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -194,6 +234,7 @@
 		DA54B4852624C7B400A8C3C6 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				DADD54D426258686008079BA /* Cells */,
 				DA54B4822624C33D00A8C3C6 /* Views */,
 				DA54B4832624C34500A8C3C6 /* Controllers */,
 			);
@@ -203,6 +244,7 @@
 		DA54B4872624CB6900A8C3C6 /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
+				DADD54F42625A2F7008079BA /* RAInterface.swift */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -217,8 +259,32 @@
 		DA54B4892624CF9900A8C3C6 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				DADD54EC26259AC2008079BA /* RARepositoriesDetailsViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		DADD54CA262583AE008079BA /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		DADD54D426258686008079BA /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				DADD54D52625869E008079BA /* RATableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		DADD54F72625A539008079BA /* Init */ = {
+			isa = PBXGroup;
+			children = (
+				DADD54F82625A54D008079BA /* RAInitialViewController.swift */,
+			);
+			path = Init;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -316,8 +382,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA54B45326247BCE00A8C3C6 /* ViewController.swift in Sources */,
+				DA54B45326247BCE00A8C3C6 /* RAListViewController.swift in Sources */,
+				DA893E8E2625B3020070F40E /* UIViewController+Ex.swift in Sources */,
+				DADD54CF262585E5008079BA /* UIEdgeInsets+Ex.swift in Sources */,
+				DADD54E626259685008079BA /* RAView.swift in Sources */,
 				DA54B44F26247BCE00A8C3C6 /* AppDelegate.swift in Sources */,
+				DADD54F92625A54D008079BA /* RAInitialViewController.swift in Sources */,
+				DADD54F126259F02008079BA /* RARepoViewModel.swift in Sources */,
+				DADD54CC26258537008079BA /* UIView+Ex.swift in Sources */,
+				DADD54D62625869E008079BA /* RATableViewCell.swift in Sources */,
+				DADD54EA26259A9E008079BA /* RARepositoriesPresenter.swift in Sources */,
+				DADD54ED26259AC2008079BA /* RARepositoriesDetailsViewController.swift in Sources */,
+				DADD55012625ACD5008079BA /* Array+Ex.swift in Sources */,
+				DADD54D9262587E4008079BA /* RABaseInteractor.swift in Sources */,
+				DADD54D22625864C008079BA /* RABaseViewController.swift in Sources */,
+				DADD54F52625A2F7008079BA /* RAInterface.swift in Sources */,
+				DADD54DC26258885008079BA /* UIFont+Ex.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
