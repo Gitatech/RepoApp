@@ -22,7 +22,6 @@ class RAEmptyListView: RAViewWithStackView {
 
     private(set) lazy var descriptionView: RADescriptionView = {
         let view = RADescriptionView()
-        view.set(text: "No repositories")
         view.font = .font(ofType: .smallRegular)
         view.isHidden = true
 

@@ -55,7 +55,7 @@ class RAListViewController: RABaseViewController {
         let view = RAEmptyListView()
         view.isHidden = true
         view.setImage(imageName: "empty_folder", alpha: 0.1)
-        view.setDescription("No repositories here")
+        view.setDescription(NSLocalizedString("No repositories", comment: ""))
 
         return view
     }()
@@ -121,10 +121,10 @@ class RAListViewController: RABaseViewController {
 
     // MARK: - Navigation Bar
     private func setupNavigationBar() {
-        self.controllerTitle = "Repositories"
+        self.controllerTitle = NSLocalizedString("Repositories", comment: "")
 
         let sortingItem = UIBarButtonItem(
-            title: "Sorting",
+            title: NSLocalizedString("Sorting", comment: ""),
             image: nil,
             primaryAction: nil,
             menu: UIMenu(
@@ -138,7 +138,7 @@ class RAListViewController: RABaseViewController {
                         guard let self = self else { return }
                         self.models.accept(self.models.value.sorted(by: { $0.repoName > $1.repoName }))
                     },
-                    UIAction(title: "Reset") { [weak self] _ in
+                    UIAction(title: NSLocalizedString("Reset", comment: "")) { [weak self] _ in
                         guard let self = self else { return }
                         self.models.accept(self.defaultModels.value)
                     }

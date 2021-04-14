@@ -14,7 +14,7 @@ class RARepositoriesDetailsViewController: RABaseViewController {
     override func initController() {
         super.initController()
 
-        self.controllerTitle = "Details"
+        self.controllerTitle = NSLocalizedString("Details", comment: "")
 
         self.mainView.addSubview(self.contentView)
         self.constraints()
