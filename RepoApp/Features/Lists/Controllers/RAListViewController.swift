@@ -45,7 +45,7 @@ class RAListViewController: RABaseViewController {
         let view = RAEmptyListView()
         view.isHidden = true
         view.setImage(imageName: "empty_folder", alpha: 0.1)
-        view.setDescription("No repositopries here")
+        view.setDescription("No repositories here")
 
         return view
     }()
@@ -141,19 +141,21 @@ class RAListViewController: RABaseViewController {
         var repoArray: [RARepoViewModel] = []
         if let model = responseModel as? [RARepoGithubResponseModel] {
             model.forEach {
-                repoArray.append(RARepoViewModel(name: $0.repositoryName,
-                                                 username: $0.owner.login,
-                                                 avatar: $0.owner.avatarUrl,
-                                                 description: $0.repositoryDescription,
-                                                 type: .github))
+                repoArray.append(RARepoViewModel(
+                                    name: $0.repositoryName,
+                                    username: $0.owner.login,
+                                    avatar: $0.owner.avatarUrl,
+                                    description: $0.repositoryDescription,
+                                    type: .github))
             }
         } else if let model = responseModel as? RARepoBitucketResponseModel {
             model.values.forEach {
-                repoArray.append(RARepoViewModel(name: $0.name,
-                                                 username: $0.owner.nickname ?? "Undefined",
-                                                 avatar: $0.owner.links.avatar.avatarLink,
-                                                 description: $0.description,
-                                                 type: .bitbucket))
+                repoArray.append(RARepoViewModel(
+                                    name: $0.name,
+                                    username: $0.owner.nickname ?? "Undefined",
+                                    avatar: $0.owner.links.avatar.avatarLink,
+                                    description: $0.description,
+                                    type: .bitbucket))
             }
         }
 
@@ -178,7 +180,6 @@ extension RAListViewController {
             .subscribe(onNext: { item in
                 let controller = RARepositoriesDetailsViewController()
                 controller.setView(with: item)
-
                 RAInterface.shared.pushVC(controller, animated: true)
             }).disposed(by: self.disposeBag)
     }
@@ -188,6 +189,7 @@ extension RAListViewController {
             .asObservable()
             .subscribe { (_) in
                 self.errorView.isHidden = !self.models.value.isEmpty
+                self.navigationItem.rightBarButtonItem?.isEnabled = !self.models.value.isEmpty
             }.disposed(by: self.disposeBag)
     }
 }

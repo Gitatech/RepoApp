@@ -7,12 +7,6 @@
 
 import Alamofire
 
-class Connectivity {
-    class var isConnectedToInternet: Bool {
-        return NetworkReachabilityManager()?.isReachable ?? false
-    }
-}
-
 class RANetworking {
     // MARK: - Enumerations
     enum RABaseUrl {
@@ -49,8 +43,20 @@ class RANetworking {
                                               parameters: [String: String]? = nil,
                                               successHandler: @escaping (Generic) -> Void,
                                               errorHandler: @escaping (RANetworkError) -> Void) {
-        if let connection = NetworkReachabilityManager()?.isReachable, !connection {
-            Swift.debugPrint("No connection")
+        if let isConnectionAvailable = NetworkReachabilityManager()?.isReachable,
+           !isConnectionAvailable {
+            RAAlertManager.shared.show(
+                title: "No connection to the Interner",
+                message: "Please, check your device for the connection to the Interner",
+                leftButtonTitle: "Cancel",
+                rightButtonTitle: "Settings",
+                leftButtonAction: nil,
+                rightButtonAction: {
+                    guard let settingsUrl = URL(string: UIApplication.openSettingsURLString),
+                          UIApplication.shared.canOpenURL(settingsUrl) else { return }
+                    UIApplication.shared.open(settingsUrl)
+                })
+            return
         }
 
         var urlParameters = self.parameters
