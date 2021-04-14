@@ -37,7 +37,6 @@
 		DADD54D9262587E4008079BA /* RABaseInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADD54D8262587E4008079BA /* RABaseInteractor.swift */; };
 		DADD54DC26258885008079BA /* UIFont+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADD54DB26258885008079BA /* UIFont+Ex.swift */; };
 		DADD54E626259685008079BA /* RAView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADD54E526259685008079BA /* RAView.swift */; };
-		DADD54EA26259A9E008079BA /* RARepositoriesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADD54E926259A9E008079BA /* RARepositoriesPresenter.swift */; };
 		DADD54ED26259AC2008079BA /* RARepositoriesDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADD54EC26259AC2008079BA /* RARepositoriesDetailsViewController.swift */; };
 		DADD54F126259F02008079BA /* RARepoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADD54F026259F02008079BA /* RARepoViewModel.swift */; };
 		DADD54F52625A2F7008079BA /* RAInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADD54F42625A2F7008079BA /* RAInterface.swift */; };
@@ -78,7 +77,6 @@
 		DADD54D8262587E4008079BA /* RABaseInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RABaseInteractor.swift; sourceTree = "<group>"; };
 		DADD54DB26258885008079BA /* UIFont+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Ex.swift"; sourceTree = "<group>"; };
 		DADD54E526259685008079BA /* RAView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RAView.swift; sourceTree = "<group>"; };
-		DADD54E926259A9E008079BA /* RARepositoriesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RARepositoriesPresenter.swift; sourceTree = "<group>"; };
 		DADD54EC26259AC2008079BA /* RARepositoriesDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RARepositoriesDetailsViewController.swift; sourceTree = "<group>"; };
 		DADD54F026259F02008079BA /* RARepoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RARepoViewModel.swift; sourceTree = "<group>"; };
 		DADD54F42625A2F7008079BA /* RAInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RAInterface.swift; sourceTree = "<group>"; };
@@ -152,7 +150,6 @@
 			children = (
 				DA54B47C2624C17E00A8C3C6 /* Lists */,
 				DA54B47D2624C18A00A8C3C6 /* Details */,
-				DADD54E926259A9E008079BA /* RARepositoriesPresenter.swift */,
 				DADD54F026259F02008079BA /* RARepoViewModel.swift */,
 			);
 			path = Features;
@@ -447,7 +444,6 @@
 				DA893EBD2626FFA20070F40E /* RANetworking.swift in Sources */,
 				DA893ECD262721920070F40E /* RARepoBitbucketResponseModel.swift in Sources */,
 				DA893E9F2625DB7A0070F40E /* UIStackView+Ex.swift in Sources */,
-				DADD54EA26259A9E008079BA /* RARepositoriesPresenter.swift in Sources */,
 				DA893E942625D7CE0070F40E /* RAEmptyListView.swift in Sources */,
 				DA893EAA2625E1E40070F40E /* RAImageView.swift in Sources */,
 				DA893ECA262720820070F40E /* RARepoGithubResponseModel.swift in Sources */,
@@ -604,7 +600,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B7M3FL53D4;
 				INFOPLIST_FILE = RepoApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -625,7 +621,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B7M3FL53D4;
 				INFOPLIST_FILE = RepoApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

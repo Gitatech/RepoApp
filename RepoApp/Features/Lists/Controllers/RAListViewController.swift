@@ -13,10 +13,9 @@ class RAListViewController: RABaseViewController {
     // MARK: - Variables
     private let edgeInsets = UIEdgeInsets(top: 16, left: 48, bottom: 16, right: 48)
 
-    private var dispatchGroup = DispatchGroup()
-
     private let disposeBag = DisposeBag()
 
+    var defaultModels: BehaviorRelay<[RARepoViewModel]> = BehaviorRelay(value: [])
     var models: BehaviorRelay<[RARepoViewModel]> = BehaviorRelay(value: [])
 
     // MARK: - Interactor
@@ -64,7 +63,7 @@ class RAListViewController: RABaseViewController {
         super.initController()
 
         self.setContentScrolling(isEnabled: false)
-        self.controllerTitle = "Repositories"
+        self.setupNavigationBar()
 
         self.mainView.addSubviews([
             self.tableView,
@@ -89,13 +88,42 @@ class RAListViewController: RABaseViewController {
         }
     }
 
+    // MARK: - Navigation Bar
+    private func setupNavigationBar() {
+        self.controllerTitle = "Repositories"
+
+        let sortingItem = UIBarButtonItem(
+            title: "Sorting",
+            image: nil,
+            primaryAction: nil,
+            menu: UIMenu(
+                title: "",
+                children: [
+                    UIAction(title: "A → Z") { [weak self] _ in
+                        guard let self = self else { return }
+                        self.models.accept(self.models.value.sorted(by: { $0.repoName < $1.repoName }))
+                    },
+                    UIAction(title: "Z ← A") { [weak self] _ in
+                        guard let self = self else { return }
+                        self.models.accept(self.models.value.sorted(by: { $0.repoName > $1.repoName }))
+                    },
+                    UIAction(title: "Reset") { [weak self] _ in
+                        guard let self = self else { return }
+                        self.models.accept(self.defaultModels.value)
+                    }
+                ]))
+        self.navigationItem.rightBarButtonItem = sortingItem
+    }
+
     // MARK: - Handlers
     private func handleSuccessResponse(success: RAReposListSuccess) {
         switch success {
         case .github(let model):
             self.models.accept(self.parseResponseModels(responseModel: model) + self.models.value)
+            self.defaultModels.accept(self.models.value)
         case .bitbucket(let model):
             self.models.accept(self.parseResponseModels(responseModel: model) + self.models.value)
+            self.defaultModels.accept(self.models.value)
         }
     }
 
@@ -161,9 +189,5 @@ extension RAListViewController {
             .subscribe { (_) in
                 self.errorView.isHidden = !self.models.value.isEmpty
             }.disposed(by: self.disposeBag)
-    }
-
-    private func sortObservableArray() {
-        self.models.accept(self.models.value.sorted(by: { $0.repoName < $1.repoName }))
     }
 }
