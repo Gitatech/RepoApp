@@ -9,7 +9,8 @@ import UIKit
 
 class RAEmptyListView: RAViewWithStackView {
     // MARK: - Variables
-    private let descriptionInset = UIEdgeInsets(all: 16)
+    private let descriptionInsets = UIEdgeInsets(all: 16)
+
     var defaultImageSize = CGSize(width: 175, height: 175) {
         didSet {
             self.imageView.imageSize = self.defaultImageSize
@@ -33,7 +34,7 @@ class RAEmptyListView: RAViewWithStackView {
         super.initView()
 
         self.add(self.imageView)
-        self.add(self.descriptionView.injectedIntoContainerWith(edgeInsets: self.descriptionInset))
+        self.add(self.descriptionView.injectedIntoContainerWith(edgeInsets: self.descriptionInsets))
     }
 
     // MARK: - Setters

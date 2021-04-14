@@ -45,8 +45,8 @@ class RABaseViewController: UIViewController {
 
     // MARK: - GUI Variables
     private(set) lazy var mainScrollView: UIScrollView = {
-        let view: UIScrollView = UIScrollView()
-        view.contentInset = UIEdgeInsets.zero
+        let view = UIScrollView()
+        view.contentInset = .zero
         view.backgroundColor = .clear
         view.showsVerticalScrollIndicator = false
         view.contentInsetAdjustmentBehavior = .never
@@ -85,6 +85,8 @@ class RABaseViewController: UIViewController {
     }
 
     private func _initController() {
+        self.view.backgroundColor = .white
+
         self.view.addSubview(self.mainScrollView)
         self.mainScrollView.addSubview(self.mainView)
 
@@ -96,7 +98,8 @@ class RABaseViewController: UIViewController {
     // MARK: - Constraints
     private func makeConstraints() {
         self.mainScrollView.snp.makeConstraints { (make) in
-            make.edges.equalToSuperview()
+            make.top.equalTo(self.view.safeAreaLayoutGuide.snp.topMargin)
+            make.left.right.bottom.equalToSuperview()
         }
 
         self.setContentScrolling(isEnabled: self.isContentScrollingEnabled)

@@ -23,6 +23,7 @@
 		DA893EAD2625F5160070F40E /* RAIconTitleDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA893EAC2625F5160070F40E /* RAIconTitleDescriptionView.swift */; };
 		DA893EB02625F7D60070F40E /* RATitleDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA893EAF2625F7D60070F40E /* RATitleDescriptionView.swift */; };
 		DA893EB32625F8530070F40E /* RATitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA893EB22625F8530070F40E /* RATitleView.swift */; };
+		DA893EB82626F0D30070F40E /* RARepoDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA893EB72626F0D30070F40E /* RARepoDetailsView.swift */; };
 		DADD54CC26258537008079BA /* UIView+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADD54CB26258537008079BA /* UIView+Ex.swift */; };
 		DADD54CF262585E5008079BA /* UIEdgeInsets+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADD54CE262585E5008079BA /* UIEdgeInsets+Ex.swift */; };
 		DADD54D22625864C008079BA /* RABaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADD54D12625864C008079BA /* RABaseViewController.swift */; };
@@ -57,6 +58,7 @@
 		DA893EAC2625F5160070F40E /* RAIconTitleDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RAIconTitleDescriptionView.swift; sourceTree = "<group>"; };
 		DA893EAF2625F7D60070F40E /* RATitleDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RATitleDescriptionView.swift; sourceTree = "<group>"; };
 		DA893EB22625F8530070F40E /* RATitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RATitleView.swift; sourceTree = "<group>"; };
+		DA893EB72626F0D30070F40E /* RARepoDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RARepoDetailsView.swift; sourceTree = "<group>"; };
 		DADD54CB26258537008079BA /* UIView+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ex.swift"; sourceTree = "<group>"; };
 		DADD54CE262585E5008079BA /* UIEdgeInsets+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIEdgeInsets+Ex.swift"; sourceTree = "<group>"; };
 		DADD54D12625864C008079BA /* RABaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RABaseViewController.swift; sourceTree = "<group>"; };
@@ -279,6 +281,7 @@
 		DA54B4882624CF9300A8C3C6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				DA893EB72626F0D30070F40E /* RARepoDetailsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -417,6 +420,7 @@
 				DADD54CF262585E5008079BA /* UIEdgeInsets+Ex.swift in Sources */,
 				DA893E9B2625DA860070F40E /* RAViewWithStackView.swift in Sources */,
 				DADD54E626259685008079BA /* RAView.swift in Sources */,
+				DA893EB82626F0D30070F40E /* RARepoDetailsView.swift in Sources */,
 				DA54B44F26247BCE00A8C3C6 /* AppDelegate.swift in Sources */,
 				DADD54F126259F02008079BA /* RARepoViewModel.swift in Sources */,
 				DADD54CC26258537008079BA /* UIView+Ex.swift in Sources */,
@@ -576,7 +580,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B7M3FL53D4;
 				INFOPLIST_FILE = RepoApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -597,7 +601,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B7M3FL53D4;
 				INFOPLIST_FILE = RepoApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
