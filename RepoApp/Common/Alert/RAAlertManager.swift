@@ -31,7 +31,6 @@ class RAAlertManager {
 
         while let controller = topController.presentedViewController {
             topController = controller
-            topController.view.backgroundColor = .white
         }
 
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)

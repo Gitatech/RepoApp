@@ -8,13 +8,17 @@
 import UIKit
 
 class RADescriptionView: RALabel {
+    // MARK: - Variables
+    private let textEdgeInsets = UIEdgeInsets(top: 8, left: 16, bottom: 8, right: 16)
+    private let descriptionColor = UIColor(named: "descriptionColor")
+
     // MARK: - Initialization
     override func initView() {
         super.initView()
 
-        self.textContainerInset = UIEdgeInsets(top: 8, left: 16, bottom: 8, right: 16)
+        self.textContainerInset = self.textEdgeInsets
 
-        self.labelTextColor = .darkGray
+        self.labelTextColor = self.descriptionColor
         self.font = .font(ofType: .regularRegular)
 
         self.numberOfLines = 0

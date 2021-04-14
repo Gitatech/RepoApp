@@ -8,12 +8,16 @@
 import UIKit
 
 class RATitleView: RALabel {
+    // MARK: - Variables
+    private let textEdgeInsets = UIEdgeInsets(top: 8, left: 16, bottom: 8, right: 16)
+    private let titleColor = UIColor(named: "titleColor")
+
     // MARK: - Initialization
     override func initView() {
         super.initView()
 
-        self.textContainerInset = UIEdgeInsets(top: 8, left: 16, bottom: 8, right: 16)
-        self.labelTextColor = .black
+        self.textContainerInset = self.textEdgeInsets
+        self.labelTextColor = self.titleColor
 
         self.font = .font(ofType: .largeTitleMedium)
 

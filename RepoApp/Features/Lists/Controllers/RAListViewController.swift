@@ -60,12 +60,21 @@ class RAListViewController: RABaseViewController {
         return view
     }()
 
+    private lazy var refreshControl: UIRefreshControl = {
+        let control = UIRefreshControl()
+        control.tintColor = UIColor(named: "AccentColor")
+        control.attributedTitle = NSAttributedString(
+            string: "Swipe to reload repositories",
+            attributes: [.foregroundColor: UIColor(named: "AccentColor") ?? UIColor.red])
+
+        return control
+    }()
+
     // MARK: - Life Cicle
     override func singleDidAppear() {
         super.singleDidAppear()
 
-        self.interactor.request(with: .github)
-        self.interactor.request(with: .bitbucket)
+        self.loadRepositories()
     }
 
     // MARK: - Initialization
@@ -73,7 +82,9 @@ class RAListViewController: RABaseViewController {
         super.initController()
 
         self.setContentScrolling(isEnabled: false)
+
         self.setupNavigationBar()
+        self.setupRefreshControl()
 
         self.mainView.addSubviews([
             self.tableView,
@@ -96,6 +107,16 @@ class RAListViewController: RABaseViewController {
             make.center.equalToSuperview()
             make.left.right.equalToSuperview().inset(self.edgeInsets)
         }
+    }
+
+    // MARK: - Methods
+    private func loadRepositories() {
+        self.interactor.request(with: .github)
+        self.interactor.request(with: .bitbucket)
+    }
+
+    @objc func refresh() {
+        self.loadRepositories()
     }
 
     // MARK: - Navigation Bar
@@ -125,8 +146,20 @@ class RAListViewController: RABaseViewController {
         self.navigationItem.rightBarButtonItem = sortingItem
     }
 
+    // MARK: - Refresh Control
+    private func setupRefreshControl() {
+        self.refreshControl.addTarget(self,
+                                      action: #selector(self.refresh),
+                                      for: .valueChanged)
+        self.tableView.addSubview(self.refreshControl)
+    }
+
     // MARK: - Handlers
     private func handleSuccessResponse(success: RAReposListSuccess) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            self.refreshControl.endRefreshing()
+        }
+
         switch success {
         case .github(let model):
             self.models.accept(self.parseResponseModels(responseModel: model) + self.models.value)
@@ -140,6 +173,10 @@ class RAListViewController: RABaseViewController {
     }
 
     private func handleErrorResponse(error: RAReposListError) {
+        DispatchQueue.main.async {
+            self.refreshControl.endRefreshing()
+        }
+
         switch error {
         case .typeCasting:
             Swift.debugPrint("type casting")

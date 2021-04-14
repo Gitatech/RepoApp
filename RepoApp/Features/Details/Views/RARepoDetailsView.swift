@@ -12,6 +12,8 @@ class RARepoDetailsView: RAViewWithStackView {
     // MARK: - Variables
     private let contentEdgeInsets = UIEdgeInsets(all: 16)
 
+    private let bgColor = UIColor(named: "descriptionColor")
+
     var defaultImageSize = CGSize(width: 250, height: 250) {
         didSet {
             self.avatarView.imageSize = self.defaultImageSize
@@ -58,10 +60,10 @@ class RARepoDetailsView: RAViewWithStackView {
             self.avatarView.imageView.backgroundColor = .clear
             self.avatarView.setImage(with: url) { [weak self] success in
                 guard let self = self else { return }
-                self.avatarView.imageView.backgroundColor = .darkGray
+                self.avatarView.imageView.backgroundColor = self.bgColor
             }
         } else {
-            self.avatarView.imageView.backgroundColor = .darkGray
+            self.avatarView.imageView.backgroundColor = self.bgColor
         }
     }
 
