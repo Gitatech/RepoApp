@@ -41,8 +41,8 @@ class RARepoListCell: RATableViewCell {
     }
 
     // MARK: - Setter
-    func set(title: String, description: String) {
-        self.mainView.set(title: title, description: description, type: .bitbucket)
+    func set(title: String, description: String, type: RARepoViewModel.RARepoType) {
+        self.mainView.set(title: title, description: description, type: type)
 
         self.setNeedsUpdateConstraints()
     }

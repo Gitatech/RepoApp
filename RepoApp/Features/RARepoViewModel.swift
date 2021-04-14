@@ -28,12 +28,14 @@ class RARepoViewModel {
     let username: String
     let ownerAvatar: String?
     let repoDescription: String?
+    let repoType: RARepoType
 
     // MARK: - Init
-    init(name: String, username: String, avatar: String? = nil, description: String? = nil) {
+    init(name: String, username: String, avatar: String? = nil, description: String? = nil, type: RARepoType = .bitbucket) {
         self.repoName = name
         self.username = username
         self.ownerAvatar = avatar
         self.repoDescription = description
+        self.repoType = type
     }
 }

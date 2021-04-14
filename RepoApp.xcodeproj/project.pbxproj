@@ -24,6 +24,12 @@
 		DA893EB02625F7D60070F40E /* RATitleDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA893EAF2625F7D60070F40E /* RATitleDescriptionView.swift */; };
 		DA893EB32625F8530070F40E /* RATitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA893EB22625F8530070F40E /* RATitleView.swift */; };
 		DA893EB82626F0D30070F40E /* RARepoDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA893EB72626F0D30070F40E /* RARepoDetailsView.swift */; };
+		DA893EBD2626FFA20070F40E /* RANetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA893EBC2626FFA20070F40E /* RANetworking.swift */; };
+		DA893EC02627021C0070F40E /* RANetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA893EBF2627021C0070F40E /* RANetworkError.swift */; };
+		DA893EC4262703520070F40E /* RANetworking+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA893EC3262703520070F40E /* RANetworking+Ex.swift */; };
+		DA893EC7262705A90070F40E /* RAReposListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA893EC6262705A90070F40E /* RAReposListInteractor.swift */; };
+		DA893ECA262720820070F40E /* RARepoGithubResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA893EC9262720820070F40E /* RARepoGithubResponseModel.swift */; };
+		DA893ECD262721920070F40E /* RARepoBitbucketResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA893ECC262721920070F40E /* RARepoBitbucketResponseModel.swift */; };
 		DADD54CC26258537008079BA /* UIView+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADD54CB26258537008079BA /* UIView+Ex.swift */; };
 		DADD54CF262585E5008079BA /* UIEdgeInsets+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADD54CE262585E5008079BA /* UIEdgeInsets+Ex.swift */; };
 		DADD54D22625864C008079BA /* RABaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADD54D12625864C008079BA /* RABaseViewController.swift */; };
@@ -59,6 +65,12 @@
 		DA893EAF2625F7D60070F40E /* RATitleDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RATitleDescriptionView.swift; sourceTree = "<group>"; };
 		DA893EB22625F8530070F40E /* RATitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RATitleView.swift; sourceTree = "<group>"; };
 		DA893EB72626F0D30070F40E /* RARepoDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RARepoDetailsView.swift; sourceTree = "<group>"; };
+		DA893EBC2626FFA20070F40E /* RANetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RANetworking.swift; sourceTree = "<group>"; };
+		DA893EBF2627021C0070F40E /* RANetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RANetworkError.swift; sourceTree = "<group>"; };
+		DA893EC3262703520070F40E /* RANetworking+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RANetworking+Ex.swift"; sourceTree = "<group>"; };
+		DA893EC6262705A90070F40E /* RAReposListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RAReposListInteractor.swift; sourceTree = "<group>"; };
+		DA893EC9262720820070F40E /* RARepoGithubResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RARepoGithubResponseModel.swift; sourceTree = "<group>"; };
+		DA893ECC262721920070F40E /* RARepoBitbucketResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RARepoBitbucketResponseModel.swift; sourceTree = "<group>"; };
 		DADD54CB26258537008079BA /* UIView+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ex.swift"; sourceTree = "<group>"; };
 		DADD54CE262585E5008079BA /* UIEdgeInsets+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIEdgeInsets+Ex.swift"; sourceTree = "<group>"; };
 		DADD54D12625864C008079BA /* RABaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RABaseViewController.swift; sourceTree = "<group>"; };
@@ -226,6 +238,7 @@
 		DA54B4812624C20B00A8C3C6 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
+				DA893EC6262705A90070F40E /* RAReposListInteractor.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -256,6 +269,9 @@
 			isa = PBXGroup;
 			children = (
 				DADD54D8262587E4008079BA /* RABaseInteractor.swift */,
+				DA893EBC2626FFA20070F40E /* RANetworking.swift */,
+				DA893EBF2627021C0070F40E /* RANetworkError.swift */,
+				DA893EC3262703520070F40E /* RANetworking+Ex.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -297,6 +313,8 @@
 		DA893E992625D8A50070F40E /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				DA893EC9262720820070F40E /* RARepoGithubResponseModel.swift */,
+				DA893ECC262721920070F40E /* RARepoBitbucketResponseModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -415,6 +433,7 @@
 				DA54B45326247BCE00A8C3C6 /* RAListViewController.swift in Sources */,
 				DA893EAD2625F5160070F40E /* RAIconTitleDescriptionView.swift in Sources */,
 				DA893EA62625DE240070F40E /* RADescriptionView.swift in Sources */,
+				DA893EC7262705A90070F40E /* RAReposListInteractor.swift in Sources */,
 				DA893EB02625F7D60070F40E /* RATitleDescriptionView.swift in Sources */,
 				DA893E8E2625B3020070F40E /* UIViewController+Ex.swift in Sources */,
 				DADD54CF262585E5008079BA /* UIEdgeInsets+Ex.swift in Sources */,
@@ -425,10 +444,14 @@
 				DADD54F126259F02008079BA /* RARepoViewModel.swift in Sources */,
 				DADD54CC26258537008079BA /* UIView+Ex.swift in Sources */,
 				DADD54D62625869E008079BA /* RATableViewCell.swift in Sources */,
+				DA893EBD2626FFA20070F40E /* RANetworking.swift in Sources */,
+				DA893ECD262721920070F40E /* RARepoBitbucketResponseModel.swift in Sources */,
 				DA893E9F2625DB7A0070F40E /* UIStackView+Ex.swift in Sources */,
 				DADD54EA26259A9E008079BA /* RARepositoriesPresenter.swift in Sources */,
 				DA893E942625D7CE0070F40E /* RAEmptyListView.swift in Sources */,
 				DA893EAA2625E1E40070F40E /* RAImageView.swift in Sources */,
+				DA893ECA262720820070F40E /* RARepoGithubResponseModel.swift in Sources */,
+				DA893EC4262703520070F40E /* RANetworking+Ex.swift in Sources */,
 				DA893E972625D84D0070F40E /* RARepoListCell.swift in Sources */,
 				DA893EB32625F8530070F40E /* RATitleView.swift in Sources */,
 				DADD54ED26259AC2008079BA /* RARepositoriesDetailsViewController.swift in Sources */,
@@ -437,6 +460,7 @@
 				DADD54D22625864C008079BA /* RABaseViewController.swift in Sources */,
 				DADD54F52625A2F7008079BA /* RAInterface.swift in Sources */,
 				DADD54DC26258885008079BA /* UIFont+Ex.swift in Sources */,
+				DA893EC02627021C0070F40E /* RANetworkError.swift in Sources */,
 				DA893EA32625DD4C0070F40E /* RALabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

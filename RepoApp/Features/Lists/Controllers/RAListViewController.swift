@@ -13,10 +13,20 @@ class RAListViewController: RABaseViewController {
     // MARK: - Variables
     private let edgeInsets = UIEdgeInsets(top: 16, left: 48, bottom: 16, right: 48)
 
+    private var dispatchGroup = DispatchGroup()
+
     private let disposeBag = DisposeBag()
 
-    var defaultModels: BehaviorRelay<[String]> = BehaviorRelay(value: [])
-    var models: BehaviorRelay<[String]> = BehaviorRelay(value: [])
+    var models: BehaviorRelay<[RARepoViewModel]> = BehaviorRelay(value: [])
+
+    // MARK: - Interactor
+    private lazy var interactor = RAReposListInteractor(
+        successHandler: { [weak self] success in
+            self?.handleSuccessResponse(success: success)
+        },
+        errorHandler: { [weak self] error in
+            self?.handleErrorResponse(error: error)
+        })
 
     // MARK: - GUI Variables
     private lazy var tableView: UITableView = {
@@ -45,11 +55,8 @@ class RAListViewController: RABaseViewController {
     override func singleDidAppear() {
         super.singleDidAppear()
 
-        // TODO: - Start requests + Dispatch group + Remove next line
-        Swift.debugPrint("Start flow")
-
-        self.models.accept(["user3", "user2", "user1"])
-        self.defaultModels.accept(["username1", "username2", "username3"])
+        self.interactor.request(with: .github)
+        self.interactor.request(with: .bitbucket)
     }
 
     // MARK: - Initialization
@@ -65,6 +72,7 @@ class RAListViewController: RABaseViewController {
         ])
 
         self.bindViewsToViewModel()
+        self.showEmptyView()
 
         self.constraints()
     }
@@ -81,45 +89,81 @@ class RAListViewController: RABaseViewController {
         }
     }
 
-    // MARK: - RX Binding
-    private func bindViewsToViewModel() {
+    // MARK: - Handlers
+    private func handleSuccessResponse(success: RAReposListSuccess) {
+        switch success {
+        case .github(let model):
+            self.models.accept(self.parseResponseModels(responseModel: model) + self.models.value)
+        case .bitbucket(let model):
+            self.models.accept(self.parseResponseModels(responseModel: model) + self.models.value)
+        }
+    }
+
+    private func handleErrorResponse(error: RAReposListError) {
+        switch error {
+        case .typeCasting:
+            Swift.debugPrint("type casting")
+        case .server(let error):
+            Swift.debugPrint(error.localizedDescription)
+        }
+    }
+
+    // MARK: - Parsing
+    private func parseResponseModels<Generic: Decodable>(responseModel: Generic) -> [RARepoViewModel] {
+        var repoArray: [RARepoViewModel] = []
+        if let model = responseModel as? [RARepoGithubResponseModel] {
+            model.forEach {
+                repoArray.append(RARepoViewModel(name: $0.repositoryName,
+                                                 username: $0.owner.login,
+                                                 avatar: $0.owner.avatarUrl,
+                                                 description: $0.repositoryDescription,
+                                                 type: .github))
+            }
+        } else if let model = responseModel as? RARepoBitucketResponseModel {
+            model.values.forEach {
+                repoArray.append(RARepoViewModel(name: $0.name,
+                                                 username: $0.owner.nickname ?? "Undefined",
+                                                 avatar: $0.owner.links.avatar.avatarLink,
+                                                 description: $0.description,
+                                                 type: .bitbucket))
+            }
+        }
+
+        return repoArray
+    }
+}
+
+// MARK: - RX Binding
+extension RAListViewController {
+    func bindViewsToViewModel() {
         self.models
             .asObservable()
             .bind(to: self.tableView.rx.items(
                     cellIdentifier: RARepoListCell.identifier,
-                    cellType: RARepoListCell.self)) { row, notification, cell in
-                cell.set(title: self.models.value[row],
-                         description: "Username")
-                cell.setIcon(iconUrl: nil)
+                    cellType: RARepoListCell.self)) { row, element, cell in
+                cell.set(title: element.username,
+                         description: element.repoName,
+                         type: element.repoType)
             }.disposed(by: self.disposeBag)
 
-        self.tableView.rx.modelSelected(String.self)
+        self.tableView.rx.modelSelected(RARepoViewModel.self)
             .subscribe(onNext: { item in
-
-                let model = RARepoViewModel(
-                    name: "RepoTest",
-                    username: "Igor",
-                    avatar: nil,
-                    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.")
                 let controller = RARepositoriesDetailsViewController()
-                controller.setView(with: model)
-                RAInterface.shared.push(vc: controller)
+                controller.setView(with: item)
+
+                RAInterface.shared.pushVC(controller, animated: true)
             }).disposed(by: self.disposeBag)
     }
 
-    private func sortObservableArray() {
-        self.models.value.forEach { print($0) }
-
-        print("===")
-
+    func showEmptyView() {
         self.models
             .asObservable()
-            .map { items -> [String] in
-                return items.sorted(by: <)
-            }
-            .bind(onNext: { items in
-                items.forEach { print($0) }
-            })
-            .disposed(by: self.disposeBag)
+            .subscribe { (_) in
+                self.errorView.isHidden = !self.models.value.isEmpty
+            }.disposed(by: self.disposeBag)
+    }
+
+    private func sortObservableArray() {
+        self.models.accept(self.models.value.sorted(by: { $0.repoName < $1.repoName }))
     }
 }
