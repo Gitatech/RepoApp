@@ -5,11 +5,22 @@
 //  Created by Igor Novoseltsev on 13.04.21.
 //
 
+import UIKit
+
 class RARepoViewModel {
     // MARK: - Enumerations
     enum RARepoType: String {
         case github = "GitHub"
         case bitbucket = "BitBucket"
+
+        var typeColor: UIColor {
+            switch self {
+            case .github:
+                return .clear
+            case .bitbucket:
+                return .yellow
+            }
+        }
     }
 
     // MARK: - Variables

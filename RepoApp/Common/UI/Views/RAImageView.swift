@@ -102,6 +102,7 @@ class RAImageView: RAView {
     }
 
     // MARK: - Setter
+    // TODO: - add url image loading
     func setImage(name: String) {
         self.imageView.image = UIImage(named: name)
     }
