@@ -148,7 +148,6 @@
 				DA54B4762624BDCD00A8C3C6 /* Common */,
 				DA54B4752624BD9100A8C3C6 /* Features */,
 				DA54B4782624BE3700A8C3C6 /* Extentions */,
-				DA54B4792624BE5400A8C3C6 /* Utilirty */,
 				DA54B4772624BE2300A8C3C6 /* Resources */,
 				DA54B45C26247BCF00A8C3C6 /* Info.plist */,
 			);
@@ -196,13 +195,6 @@
 				DA893E8D2625B3020070F40E /* UIViewController+Ex.swift */,
 			);
 			path = Extentions;
-			sourceTree = "<group>";
-		};
-		DA54B4792624BE5400A8C3C6 /* Utilirty */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Utilirty;
 			sourceTree = "<group>";
 		};
 		DA54B47C2624C17E00A8C3C6 /* Lists */ = {

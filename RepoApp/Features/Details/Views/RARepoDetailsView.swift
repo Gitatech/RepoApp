@@ -53,10 +53,13 @@ class RARepoDetailsView: RAViewWithStackView {
     }
 
     // MARK: - Setters
-    func setImage(image: UIImage?) {
-        if let image = image {
+    func setImage(urlString: String?) {
+        if let url = urlString {
             self.avatarView.imageView.backgroundColor = .clear
-            self.avatarView.imageView.image = image
+            self.avatarView.setImage(with: url) { [weak self] success in
+                guard let self = self else { return }
+                self.avatarView.imageView.backgroundColor = .darkGray
+            }
         } else {
             self.avatarView.imageView.backgroundColor = .darkGray
         }

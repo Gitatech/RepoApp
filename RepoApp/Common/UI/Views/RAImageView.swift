@@ -102,9 +102,27 @@ class RAImageView: RAView {
     }
 
     // MARK: - Setter
-    // TODO: - add url image loading
     func setImage(name: String) {
         self.imageView.image = UIImage(named: name)
+    }
+
+    func setImage(with urlString: String?,
+                  handler: ((_ isSuccess: Bool) -> Void)? = nil) {
+        guard let string = urlString, let url = URL(string: string) else {
+            handler?(false)
+            return
+        }
+        self.imageView.kf.setImage(
+            with: ImageResource(downloadURL: url),
+            completionHandler: { result in
+                switch result {
+                case .failure(let error):
+                    Swift.debugPrint(error.localizedDescription)
+                    handler?(false)
+                default:
+                    handler?(true)
+                }
+            })
     }
 
     // MARK: - Image loading

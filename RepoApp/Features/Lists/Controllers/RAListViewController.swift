@@ -174,6 +174,7 @@ extension RAListViewController {
                 cell.set(title: element.username,
                          description: element.repoName,
                          type: element.repoType)
+                cell.setIcon(iconUrl: element.ownerAvatar)
             }.disposed(by: self.disposeBag)
 
         self.tableView.rx.modelSelected(RARepoViewModel.self)

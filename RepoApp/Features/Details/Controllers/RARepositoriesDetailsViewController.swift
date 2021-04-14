@@ -7,15 +7,8 @@
 import UIKit
 
 class RARepositoriesDetailsViewController: RABaseViewController {
-    // MARK: - Variables
-
     // MARK: - GUI Variables
-    private lazy var contentView: RARepoDetailsView = {
-        let view = RARepoDetailsView()
-        // TODO: - Add properties
-
-        return view
-    }()
+    private lazy var contentView = RARepoDetailsView()
 
     // MARK: - Initialization
     override func initController() {
@@ -37,7 +30,7 @@ class RARepositoriesDetailsViewController: RABaseViewController {
 
     // MARK: - Setters
     func setView(with model: RARepoViewModel) {
-        self.contentView.setImage(image: nil)
+        self.contentView.setImage(urlString: model.ownerAvatar)
         self.contentView.set(with: model)
     }
 }

@@ -18,7 +18,7 @@ class RARepoViewModel {
             case .github:
                 return .clear
             case .bitbucket:
-                return .yellow
+                return .systemGreen
             }
         }
     }

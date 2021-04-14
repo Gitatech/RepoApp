@@ -21,7 +21,7 @@ class RAIconTitleDescriptionView: RAView {
         }
     }
 
-    var markerWidth: CGFloat = 10
+    var markerWidth: CGFloat = 5
 
     var markerInsets = UIEdgeInsets.zero {
         didSet {

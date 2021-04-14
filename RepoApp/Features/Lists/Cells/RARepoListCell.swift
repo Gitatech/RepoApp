@@ -50,8 +50,11 @@ class RARepoListCell: RATableViewCell {
     // MARK: - Images
     func setIcon(iconUrl: String?) {
         if let url = iconUrl {
-            self.mainView.imageView.setImage(name: url)
             self.mainView.imageView.backgroundColor = .clear
+            self.mainView.imageView.setImage(with: url) { [weak self] success in
+                guard let self = self, !success else { return }
+                self.mainView.imageView.backgroundColor = .darkGray
+            }
         } else {
             self.mainView.imageView.backgroundColor = .darkGray
         }
