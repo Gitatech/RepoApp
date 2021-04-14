@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0382B604750DA17984991D4B /* libPods-RepoApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 79D64C255A4DEEFE45D4F51A /* libPods-RepoApp.a */; };
 		DA25776C262743D4001930FE /* RAAlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA25776B262743D4001930FE /* RAAlertManager.swift */; };
+		DA257779262754C3001930FE /* RADefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA257778262754C3001930FE /* RADefaultsManager.swift */; };
 		DA54B44F26247BCE00A8C3C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA54B44E26247BCE00A8C3C6 /* AppDelegate.swift */; };
 		DA54B45326247BCE00A8C3C6 /* RAListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA54B45226247BCE00A8C3C6 /* RAListViewController.swift */; };
 		DA54B45826247BCF00A8C3C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA54B45726247BCF00A8C3C6 /* Assets.xcassets */; };
@@ -48,6 +49,7 @@
 		28FA7E28FEE877D0549D652C /* Pods-RepoApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RepoApp.release.xcconfig"; path = "Target Support Files/Pods-RepoApp/Pods-RepoApp.release.xcconfig"; sourceTree = "<group>"; };
 		79D64C255A4DEEFE45D4F51A /* libPods-RepoApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RepoApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA25776B262743D4001930FE /* RAAlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RAAlertManager.swift; sourceTree = "<group>"; };
+		DA257778262754C3001930FE /* RADefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RADefaultsManager.swift; sourceTree = "<group>"; };
 		DA54B44B26247BCE00A8C3C6 /* RepoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RepoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA54B44E26247BCE00A8C3C6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DA54B45226247BCE00A8C3C6 /* RAListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RAListViewController.swift; sourceTree = "<group>"; };
@@ -123,6 +125,14 @@
 			path = Alert;
 			sourceTree = "<group>";
 		};
+		DA257777262754A2001930FE /* UserDefaults */ = {
+			isa = PBXGroup;
+			children = (
+				DA257778262754C3001930FE /* RADefaultsManager.swift */,
+			);
+			path = UserDefaults;
+			sourceTree = "<group>";
+		};
 		DA54B44226247BCE00A8C3C6 = {
 			isa = PBXGroup;
 			children = (
@@ -167,6 +177,7 @@
 		DA54B4762624BDCD00A8C3C6 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				DA257777262754A2001930FE /* UserDefaults */,
 				DA54B4852624C7B400A8C3C6 /* UI */,
 				DA54B4842624C7A900A8C3C6 /* Network */,
 				DA54B4872624CB6900A8C3C6 /* Navigation */,
@@ -447,6 +458,7 @@
 				DA893EBD2626FFA20070F40E /* RANetworking.swift in Sources */,
 				DA893ECD262721920070F40E /* RARepoBitbucketResponseModel.swift in Sources */,
 				DA893E9F2625DB7A0070F40E /* UIStackView+Ex.swift in Sources */,
+				DA257779262754C3001930FE /* RADefaultsManager.swift in Sources */,
 				DA893E942625D7CE0070F40E /* RAEmptyListView.swift in Sources */,
 				DA893EAA2625E1E40070F40E /* RAImageView.swift in Sources */,
 				DA893ECA262720820070F40E /* RARepoGithubResponseModel.swift in Sources */,

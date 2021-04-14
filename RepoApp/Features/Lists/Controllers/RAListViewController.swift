@@ -18,6 +18,16 @@ class RAListViewController: RABaseViewController {
     var defaultModels: BehaviorRelay<[RARepoViewModel]> = BehaviorRelay(value: [])
     var models: BehaviorRelay<[RARepoViewModel]> = BehaviorRelay(value: [])
 
+    private var cache: [RARepoViewModel]? {
+        get {
+            return DefaultsManager.shared.readDataFromUD()
+        }
+        set {
+            guard let data = newValue else { return }
+            DefaultsManager.shared.writeDataToUD(model: data)
+        }
+    }
+
     // MARK: - Interactor
     private lazy var interactor = RAReposListInteractor(
         successHandler: { [weak self] success in
@@ -121,9 +131,11 @@ class RAListViewController: RABaseViewController {
         case .github(let model):
             self.models.accept(self.parseResponseModels(responseModel: model) + self.models.value)
             self.defaultModels.accept(self.models.value)
+            self.cache = self.defaultModels.value
         case .bitbucket(let model):
             self.models.accept(self.parseResponseModels(responseModel: model) + self.models.value)
             self.defaultModels.accept(self.models.value)
+            self.cache = self.defaultModels.value
         }
     }
 
@@ -134,6 +146,10 @@ class RAListViewController: RABaseViewController {
         case .server(let error):
             Swift.debugPrint(error.localizedDescription)
         }
+
+        guard let cache = self.cache else { return }
+        self.defaultModels.accept(cache)
+        self.models.accept(cache)
     }
 
     // MARK: - Parsing

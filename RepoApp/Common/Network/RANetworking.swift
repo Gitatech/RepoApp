@@ -56,6 +56,7 @@ class RANetworking {
                           UIApplication.shared.canOpenURL(settingsUrl) else { return }
                     UIApplication.shared.open(settingsUrl)
                 })
+            errorHandler(.unknown)
             return
         }
 
