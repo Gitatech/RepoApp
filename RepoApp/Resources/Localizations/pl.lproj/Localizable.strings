@@ -1,0 +1,18 @@
+/* 
+  Localizable.strings
+  RepoApp
+
+  Created by Igor Novoseltsev on 14.04.21.
+  
+*/
+
+"No repositories" = "Brak repozytoriów tutaj";
+"Repositories" = "Repozytoria";
+"Details" = "Detale";
+"Sorting" = "Sortowanie";
+"Reset" = "Resetowanie";
+"No connection title" = "Brak połączenia z Internetem";
+"No connection message" = "Sprawdź, czy Twoje urządzenie ma połączenie z Internetem";
+"Cancel" = "Anuluj";
+"Settings" = "Ustawienia";
+

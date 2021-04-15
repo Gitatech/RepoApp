@@ -1,0 +1,17 @@
+/* 
+  Localizable.strings
+  RepoApp
+
+  Created by Igor Novoseltsev on 14.04.21.
+  
+*/
+
+"No repositories" = "No repositories here";
+"Repositories" = "Repositories";
+"Details" = "Details";
+"Sorting" = "Sorting";
+"Reset" = "Reset";
+"No connection title" = "No connection to the Internet";
+"No connection message" = "Please, check your device for the connection to the Internet";
+"Cancel" = "Cancel";
+"Settings" = "Settings";
