@@ -17,15 +17,6 @@ struct RARepoGithubResponseModel: Decodable {
         case owner
         case repositoryDescription = "description"
     }
-
-    init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-
-        self.repositoryName = try container.decode(String.self, forKey: .repositoryName)
-        self.fullRepositoryName = try container.decode(String.self, forKey: .fullRepositoryName)
-        self.owner = try container.decode(RAGihubOwner.self, forKey: .owner)
-        self.repositoryDescription = try? container.decodeIfPresent(String.self, forKey: .repositoryDescription)
-    }
 }
 
 struct RAGihubOwner: Decodable {
@@ -35,12 +26,5 @@ struct RAGihubOwner: Decodable {
     enum CodingKeys: String, CodingKey {
         case avatarUrl = "avatar_url"
         case login = "login"
-    }
-
-    init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-
-        self.login = try container.decode(String.self, forKey: .login)
-        self.avatarUrl = try? container.decodeIfPresent(String.self, forKey: .avatarUrl)
     }
 }

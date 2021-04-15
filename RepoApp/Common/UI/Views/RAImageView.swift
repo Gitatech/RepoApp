@@ -94,7 +94,6 @@ class RAImageView: RAView {
     // MARK: - LayoutSubviews
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.setNeedsUpdateConstraints()
 
         if let radius = self.cornerRadius {
             self.roundCorners(self.corners, radius: radius)

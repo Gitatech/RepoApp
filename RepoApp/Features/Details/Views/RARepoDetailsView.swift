@@ -11,8 +11,9 @@ import UIKit
 class RARepoDetailsView: RAViewWithStackView {
     // MARK: - Variables
     private let contentEdgeInsets = UIEdgeInsets(all: 16)
+    private let markerEdgeInsets = UIEdgeInsets(all: 4)
 
-    private let bgColor = UIColor(named: "descriptionColor")
+    private let marlerSize = CGSize(width: 10, height: 10)
 
     var defaultImageSize = CGSize(width: 250, height: 250) {
         didSet {
@@ -29,6 +30,8 @@ class RARepoDetailsView: RAViewWithStackView {
         return imageView
     }()
 
+    private lazy var markerView = RAView()
+
     private lazy var profileView: RATitleDescriptionView = {
         let view = RATitleDescriptionView()
         view.textAlignment = .center
@@ -36,12 +39,7 @@ class RARepoDetailsView: RAViewWithStackView {
         return view
     }()
 
-    private lazy var descriptionView: RADescriptionView = {
-        let view = RADescriptionView()
-        view.font = .font(ofType: .smallRegular)
-
-        return view
-    }()
+    private lazy var descriptionView = RADescriptionView()
 
     // MARK: - Initialization
     override func initView() {
@@ -52,6 +50,16 @@ class RARepoDetailsView: RAViewWithStackView {
             self.profileView.injectedIntoContainerWith(edgeInsets: self.contentEdgeInsets),
             self.descriptionView.injectedIntoContainerWith(edgeInsets: self.contentEdgeInsets)
         ])
+        self.setMarker()
+    }
+
+    // MARK: - Methods
+    func setMarker() {
+        self.avatarView.imageView.addSubview(self.markerView)
+        self.markerView.snp.makeConstraints { (make) in
+            make.top.right.equalToSuperview().inset(self.markerEdgeInsets)
+            make.size.equalTo(self.marlerSize)
+        }
     }
 
     // MARK: - Setters
@@ -59,18 +67,20 @@ class RARepoDetailsView: RAViewWithStackView {
         if let url = urlString {
             self.avatarView.imageView.backgroundColor = .clear
             self.avatarView.setImage(with: url) { [weak self] success in
-                guard let self = self else { return }
-                self.avatarView.imageView.backgroundColor = self.bgColor
+                guard let self = self, !success else { return }
+                self.avatarView.imageView.backgroundColor = UIColor(customColor: .descriptionColor)
             }
         } else {
-            self.avatarView.imageView.backgroundColor = self.bgColor
+            self.avatarView.imageView.backgroundColor = UIColor(customColor: .descriptionColor)
         }
     }
 
     func set(with model: RARepoViewModel) {
-        self.profileView.set(title: model.repoName,
-                             description: model.username)
-        self.descriptionView.set(text: model.repoDescription)
+        self.profileView.set(title: model.username,
+                             description: model.repoName)
+        self.descriptionView.set(text: model.repoDescription,
+                                 fontType: .smallRegular)
+        self.markerView.backgroundColor = model.repoType == .bitbucket ? .systemGreen  : .clear
 
         self.setNeedsUpdateConstraints()
     }

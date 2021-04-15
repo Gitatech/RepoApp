@@ -15,9 +15,6 @@ class RARepoListCell: RATableViewCell {
     private let imageEdgeInsets = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 12)
     private let textEdgeInsets = UIEdgeInsets(top: 16, left: 0, bottom: 16, right: 0)
 
-    private let contentColor = UIColor(named: "contentRed")
-    private let bgColor = UIColor(named: "descriptionColor")
-
     // MARK: - GUI Variables
     private(set) lazy var mainView: RAIconTitleDescriptionView = {
         let view = RAIconTitleDescriptionView()
@@ -25,7 +22,7 @@ class RARepoListCell: RATableViewCell {
         view.imageSize = self.imageSize
         view.imageInsets = self.imageEdgeInsets
         view.titleDescriptionView.edgeInsets = self.textEdgeInsets
-        view.backgroundColor = self.contentColor
+        view.backgroundColor = UIColor(customColor: .contentRed)
 
         return view
     }()
@@ -46,6 +43,13 @@ class RARepoListCell: RATableViewCell {
         }
     }
 
+    // MARK: - Prepare For Reuse
+    override func prepareForReuse() {
+        super.prepareForReuse()
+
+        self.mainView.resetView()
+    }
+
     // MARK: - Setter
     func set(title: String, description: String, type: RARepoViewModel.RARepoType) {
         self.mainView.set(title: title, description: description, type: type)
@@ -59,17 +63,10 @@ class RARepoListCell: RATableViewCell {
             self.mainView.imageView.backgroundColor = .clear
             self.mainView.imageView.setImage(with: url) { [weak self] success in
                 guard let self = self, !success else { return }
-                self.mainView.imageView.backgroundColor = self.bgColor
+                self.mainView.imageView.backgroundColor = UIColor(customColor: .descriptionColor)
             }
         } else {
-            self.mainView.imageView.backgroundColor = self.bgColor
+            self.mainView.imageView.backgroundColor = UIColor(customColor: .descriptionColor)
         }
-    }
-
-    // MARK: - TODO
-    override func prepareForReuse() {
-        super.prepareForReuse()
-
-        self.mainView.resetView()
     }
 }

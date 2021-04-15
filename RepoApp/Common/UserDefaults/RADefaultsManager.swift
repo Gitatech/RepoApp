@@ -12,7 +12,7 @@ class DefaultsManager {
     static let shared = DefaultsManager()
 
     // MARK: - Variables
-    private let defaults = UserDefaults.standard
+    private let defaults: UserDefaults = .standard
     private let udRepositoriesCacheKey: String = "udRepositoriesCacheKey"
 
     // MARK: - Methods
@@ -34,4 +34,3 @@ class DefaultsManager {
         return try? JSONDecoder().decode(Array<RARepoViewModel>.self, from: data)
     }
 }
-

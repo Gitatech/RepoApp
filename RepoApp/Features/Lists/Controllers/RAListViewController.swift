@@ -6,17 +6,16 @@
 //
 
 import UIKit
-import RxSwift
 import RxCocoa
 
 class RAListViewController: RABaseViewController {
     // MARK: - Variables
     private let edgeInsets = UIEdgeInsets(top: 16, left: 48, bottom: 16, right: 48)
 
-    private let disposeBag = DisposeBag()
+    private var dispatchGroup = DispatchGroup()
 
-    var defaultModels: BehaviorRelay<[RARepoViewModel]> = BehaviorRelay(value: [])
-    var models: BehaviorRelay<[RARepoViewModel]> = BehaviorRelay(value: [])
+    private var defaultModels: BehaviorRelay<[RARepoViewModel]> = BehaviorRelay(value: [])
+    private var models: BehaviorRelay<[RARepoViewModel]> = BehaviorRelay(value: [])
 
     private var cache: [RARepoViewModel]? {
         get {
@@ -55,17 +54,17 @@ class RAListViewController: RABaseViewController {
         let view = RAEmptyListView()
         view.isHidden = true
         view.setImage(imageName: "empty_folder", alpha: 0.1)
-        view.setDescription(NSLocalizedString("No repositories", comment: ""))
+        view.setDescription("No repositories".localized())
 
         return view
     }()
 
     private lazy var refreshControl: UIRefreshControl = {
         let control = UIRefreshControl()
-        control.tintColor = UIColor(named: "AccentColor")
+        control.tintColor = UIColor(customColor: .accentColor)
         control.attributedTitle = NSAttributedString(
             string: "Swipe to reload repositories",
-            attributes: [.foregroundColor: UIColor(named: "AccentColor") ?? UIColor.red])
+            attributes: [.foregroundColor: UIColor(customColor: .accentColor) ?? .red])
 
         return control
     }()
@@ -111,8 +110,15 @@ class RAListViewController: RABaseViewController {
 
     // MARK: - Methods
     private func loadRepositories() {
+        self.dispatchGroup.enter()
         self.interactor.request(with: .github)
+
+        self.dispatchGroup.enter()
         self.interactor.request(with: .bitbucket)
+
+        self.dispatchGroup.notify(queue: .main) { [weak self] in
+            self?.refreshControl.endRefreshing()
+        }
     }
 
     @objc func refresh() {
@@ -121,10 +127,10 @@ class RAListViewController: RABaseViewController {
 
     // MARK: - Navigation Bar
     private func setupNavigationBar() {
-        self.controllerTitle = NSLocalizedString("Repositories", comment: "")
+        self.controllerTitle = "Repositories".localized()
 
         let sortingItem = UIBarButtonItem(
-            title: NSLocalizedString("Sorting", comment: ""),
+            title: "Sorting".localized(),
             image: nil,
             primaryAction: nil,
             menu: UIMenu(
@@ -138,7 +144,7 @@ class RAListViewController: RABaseViewController {
                         guard let self = self else { return }
                         self.models.accept(self.models.value.sorted(by: { $0.repoName > $1.repoName }))
                     },
-                    UIAction(title: NSLocalizedString("Reset", comment: "")) { [weak self] _ in
+                    UIAction(title: "Reset".localized()) { [weak self] _ in
                         guard let self = self else { return }
                         self.models.accept(self.defaultModels.value)
                     }
@@ -156,27 +162,15 @@ class RAListViewController: RABaseViewController {
 
     // MARK: - Handlers
     private func handleSuccessResponse(success: RAReposListSuccess) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            self.refreshControl.endRefreshing()
-        }
-
         switch success {
         case .github(let model):
-            self.models.accept(self.parseResponseModels(responseModel: model) + self.models.value)
-            self.defaultModels.accept(self.models.value)
-            self.cache = self.defaultModels.value
+            self.setupModel(with: model)
         case .bitbucket(let model):
-            self.models.accept(self.parseResponseModels(responseModel: model) + self.models.value)
-            self.defaultModels.accept(self.models.value)
-            self.cache = self.defaultModels.value
+            self.setupModel(with: model)
         }
     }
 
     private func handleErrorResponse(error: RAReposListError) {
-        DispatchQueue.main.async {
-            self.refreshControl.endRefreshing()
-        }
-
         switch error {
         case .typeCasting:
             Swift.debugPrint("type casting")
@@ -184,12 +178,22 @@ class RAListViewController: RABaseViewController {
             Swift.debugPrint(error.localizedDescription)
         }
 
+        self.dispatchGroup.leave()
+
         guard let cache = self.cache else { return }
         self.defaultModels.accept(cache)
         self.models.accept(cache)
     }
 
     // MARK: - Parsing
+    private func setupModel<Generic: Decodable>(with model: Generic) {
+        self.dispatchGroup.leave()
+
+        self.models.accept(self.parseResponseModels(responseModel: model) + self.models.value)
+        self.defaultModels.accept(self.models.value)
+        self.cache = self.defaultModels.value
+    }
+
     private func parseResponseModels<Generic: Decodable>(responseModel: Generic) -> [RARepoViewModel] {
         var repoArray: [RARepoViewModel] = []
         if let model = responseModel as? [RARepoGithubResponseModel] {

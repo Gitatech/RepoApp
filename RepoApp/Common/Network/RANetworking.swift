@@ -46,10 +46,10 @@ class RANetworking {
         if let isConnectionAvailable = NetworkReachabilityManager()?.isReachable,
            !isConnectionAvailable {
             RAAlertManager.shared.show(
-                title: "No connection to the Interner",
-                message: "Please, check your device for the connection to the Interner",
-                leftButtonTitle: "Cancel",
-                rightButtonTitle: "Settings",
+                title: "No connection title".localized(),
+                message: "No connection message".localized(),
+                leftButtonTitle: "Cancel".localized(),
+                rightButtonTitle: "Settings".localized(),
                 leftButtonAction: nil,
                 rightButtonAction: {
                     guard let settingsUrl = URL(string: UIApplication.openSettingsURLString),
@@ -90,7 +90,7 @@ class RANetworking {
                         }
                     case 400..<500:
                         Swift.debugPrint(String(decoding: data, as: UTF8.self))
-                        break
+                        errorHandler(.badRequestError)
                     case 500...:
                         errorHandler(.serverError(statusCode: httpResponse.statusCode))
                     default:

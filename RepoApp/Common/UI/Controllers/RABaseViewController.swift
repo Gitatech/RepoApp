@@ -7,11 +7,15 @@
 
 import UIKit
 import SnapKit
+import RxSwift
 
 class RABaseViewController: UIViewController {
     // MARK: - Variables Life Cicle
     private(set) var isViewDidAppeared: Bool = false
     private(set) var isViewWillAppeared: Bool = false
+
+    // MARK: - RX
+    var disposeBag = DisposeBag()
 
     // MARK: - Scrolling
     /// `false` if you don't want view to add automatic scrolling, when content is greater than visible view area.
@@ -28,8 +32,6 @@ class RABaseViewController: UIViewController {
     }
 
     // MARK: - GUI Variables
-    private let backgroundColor = UIColor(named: "background")
-
     private(set) lazy var mainScrollView: UIScrollView = {
         let view = UIScrollView()
         view.contentInset = .zero
@@ -44,7 +46,7 @@ class RABaseViewController: UIViewController {
 
     private(set) lazy var mainView: RAView = {
         let view = RAView()
-        view.backgroundColor = self.backgroundColor
+        view.backgroundColor = UIColor(customColor: .background)
 
         return view
     }()
@@ -63,7 +65,7 @@ class RABaseViewController: UIViewController {
     }
 
     private func _initController() {
-        self.view.backgroundColor = self.backgroundColor
+        self.view.backgroundColor = UIColor(customColor: .background)
 
         self.view.addSubview(self.mainScrollView)
         self.mainScrollView.addSubview(self.mainView)
@@ -105,29 +107,14 @@ class RABaseViewController: UIViewController {
         self.initController()
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-
-        if !self.isViewWillAppeared {
-            self.isViewWillAppeared = true
-            self.singleWillAppear()
-        }
-    }
-
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
-        if self.isViewDidAppeared {
-            self.secondDidAppear()
-        } else {
+        if !self.isViewDidAppeared {
             self.isViewDidAppeared = true
             self.singleDidAppear()
         }
     }
 
-    func singleWillAppear() {}
-
     func singleDidAppear() {}
-
-    func secondDidAppear() {}
 }

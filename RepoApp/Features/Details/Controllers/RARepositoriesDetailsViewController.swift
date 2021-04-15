@@ -14,7 +14,7 @@ class RARepositoriesDetailsViewController: RABaseViewController {
     override func initController() {
         super.initController()
 
-        self.controllerTitle = NSLocalizedString("Details", comment: "")
+        self.controllerTitle = "Details".localized()
 
         self.mainView.addSubview(self.contentView)
         self.constraints()
@@ -23,7 +23,7 @@ class RARepositoriesDetailsViewController: RABaseViewController {
     // MARK: - Constraits
     func constraints() {
         self.contentView.snp.makeConstraints { (make) in
-            make.top.equalToSuperview().inset(UIEdgeInsets(all: 16))
+            make.top.equalToSuperview().offset(16)
             make.left.right.bottom.equalToSuperview()
         }
     }

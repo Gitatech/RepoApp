@@ -31,6 +31,22 @@ class RAReposListInteractor: RABaseInteractor<RAReposListSuccess, RAReposListErr
         }
     }
 
+    enum FieldsValue: String, CaseIterable {
+        case name = "values.name"
+        case owner = "values.owner"
+        case description = "values.description"
+    }
+
+    // MARK: - Variables
+    private var querryValue: String {
+        var result: String = ""
+        RAReposListInteractor.FieldsValue.allCases.forEach {
+            result += result.isEmpty ? $0.rawValue : "," + $0.rawValue
+        }
+
+        return result
+    }
+
     // MARK: - Request
     func request(with type: RAReposListRequestType) {
         switch type {
@@ -48,7 +64,7 @@ class RAReposListInteractor: RABaseInteractor<RAReposListSuccess, RAReposListErr
             RANetworking.shared.requestAlamofire(
                 base: .bitbucket,
                 url: type.urlPath,
-                parameters: ["fields": "values.name,values.owner,values.description"],
+                parameters: ["fields": self.querryValue],
                 successHandler: { [weak self] (model: RARepoBitucketResponseModel) in
                     self?.handle(response: model, type: type)
                 },

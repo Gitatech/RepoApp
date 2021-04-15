@@ -49,25 +49,4 @@ class RARepoViewModel: Codable {
         self.repoDescription = description
         self.repoType = type
     }
-
-    // MARK: - Codable
-    func encode(to encoder: Encoder) throws {
-        var container = encoder.container(keyedBy: CodingKeys.self)
-
-        try container.encode(self.repoName, forKey: .repoName)
-        try container.encode(self.username, forKey: .username)
-        try container.encode(self.ownerAvatar, forKey: .ownerAvatar)
-        try container.encode(self.repoDescription, forKey: .repoDescription)
-        try container.encode(self.repoType, forKey: .repoType)
-    }
-
-    required init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-
-        self.repoName = try container.decode(String.self, forKey: .repoName)
-        self.username = try container.decode(String.self, forKey: .username)
-        self.ownerAvatar = try? container.decodeIfPresent(String.self, forKey: .ownerAvatar)
-        self.repoDescription = try? container.decodeIfPresent(String.self, forKey: .repoDescription)
-        self.repoType = try container.decode(RARepoType.self, forKey: .repoType)
-    }
 }

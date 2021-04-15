@@ -37,7 +37,7 @@ class RALabel: UILabel {
     func initView() {}
 
     // MARK: - setter
-    func set(text: String?, fontType: UIFont.RAFontType) {
+    func set(text: String?, fontType: UIFont.RAFontType = .regularRegular) {
         self.set(text: text, font: .font(ofType: fontType))
     }
 

@@ -26,15 +26,6 @@ struct RABitbucketOwner: Decodable {
         case nickname, username
         case links
     }
-
-    init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-
-        self.displayName = try container.decode(String.self, forKey: .displayName)
-        self.nickname = try container.decodeIfPresent(String.self, forKey: .nickname)
-        self.username = try container.decodeIfPresent(String.self, forKey: .username)
-        self.links = try container.decode(RABitbucketOwnerLinks.self, forKey: .links)
-    }
 }
 
 struct RABitbucketOwnerLinks: Decodable {
@@ -46,12 +37,6 @@ struct RABitbucketOwnerAvatarLink: Decodable {
 
     enum CodingKeys: String, CodingKey {
         case avatarLink = "href"
-    }
-
-    init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-
-        self.avatarLink = try? container.decodeIfPresent(String.self, forKey: .avatarLink)
     }
 }
 
