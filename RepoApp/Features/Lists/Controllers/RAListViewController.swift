@@ -63,7 +63,7 @@ class RAListViewController: RABaseViewController {
         let control = UIRefreshControl()
         control.tintColor = UIColor(customColor: .accentColor)
         control.attributedTitle = NSAttributedString(
-            string: "Swipe to reload repositories",
+            string: "Swipe".localized(),
             attributes: [.foregroundColor: UIColor(customColor: .accentColor) ?? .red])
 
         return control
