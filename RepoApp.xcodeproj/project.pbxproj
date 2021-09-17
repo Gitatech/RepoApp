@@ -8,21 +8,91 @@
 
 /* Begin PBXBuildFile section */
 		0382B604750DA17984991D4B /* libPods-RepoApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 79D64C255A4DEEFE45D4F51A /* libPods-RepoApp.a */; };
+		DA25776C262743D4001930FE /* RAAlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA25776B262743D4001930FE /* RAAlertManager.swift */; };
+		DA257779262754C3001930FE /* RADefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA257778262754C3001930FE /* RADefaultsManager.swift */; };
+		DA25778626276D6C001930FE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DA25778826276D6C001930FE /* Localizable.strings */; };
+		DA2B7BEF26279867004713C2 /* UIColor+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2B7BEE26279867004713C2 /* UIColor+Ex.swift */; };
+		DA2B7BF32627A388004713C2 /* String+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2B7BF22627A388004713C2 /* String+Ex.swift */; };
 		DA54B44F26247BCE00A8C3C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA54B44E26247BCE00A8C3C6 /* AppDelegate.swift */; };
-		DA54B45326247BCE00A8C3C6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA54B45226247BCE00A8C3C6 /* ViewController.swift */; };
+		DA54B45326247BCE00A8C3C6 /* RAListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA54B45226247BCE00A8C3C6 /* RAListViewController.swift */; };
 		DA54B45826247BCF00A8C3C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA54B45726247BCF00A8C3C6 /* Assets.xcassets */; };
 		DA54B45B26247BCF00A8C3C6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA54B45926247BCF00A8C3C6 /* LaunchScreen.storyboard */; };
+		DA893E942625D7CE0070F40E /* RAEmptyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA893E932625D7CE0070F40E /* RAEmptyListView.swift */; };
+		DA893E972625D84D0070F40E /* RARepoListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA893E962625D84D0070F40E /* RARepoListCell.swift */; };
+		DA893E9B2625DA860070F40E /* RAViewWithStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA893E9A2625DA860070F40E /* RAViewWithStackView.swift */; };
+		DA893E9F2625DB7A0070F40E /* UIStackView+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA893E9E2625DB7A0070F40E /* UIStackView+Ex.swift */; };
+		DA893EA32625DD4C0070F40E /* RALabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA893EA22625DD4C0070F40E /* RALabel.swift */; };
+		DA893EA62625DE240070F40E /* RADescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA893EA52625DE240070F40E /* RADescriptionView.swift */; };
+		DA893EAA2625E1E40070F40E /* RAImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA893EA92625E1E40070F40E /* RAImageView.swift */; };
+		DA893EAD2625F5160070F40E /* RAIconTitleDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA893EAC2625F5160070F40E /* RAIconTitleDescriptionView.swift */; };
+		DA893EB02625F7D60070F40E /* RATitleDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA893EAF2625F7D60070F40E /* RATitleDescriptionView.swift */; };
+		DA893EB32625F8530070F40E /* RATitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA893EB22625F8530070F40E /* RATitleView.swift */; };
+		DA893EB82626F0D30070F40E /* RARepoDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA893EB72626F0D30070F40E /* RARepoDetailsView.swift */; };
+		DA893EBD2626FFA20070F40E /* RANetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA893EBC2626FFA20070F40E /* RANetworking.swift */; };
+		DA893EC02627021C0070F40E /* RANetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA893EBF2627021C0070F40E /* RANetworkError.swift */; };
+		DA893EC4262703520070F40E /* RANetworking+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA893EC3262703520070F40E /* RANetworking+Ex.swift */; };
+		DA893EC7262705A90070F40E /* RAReposListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA893EC6262705A90070F40E /* RAReposListInteractor.swift */; };
+		DA893ECA262720820070F40E /* RARepoGithubResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA893EC9262720820070F40E /* RARepoGithubResponseModel.swift */; };
+		DA893ECD262721920070F40E /* RARepoBitbucketResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA893ECC262721920070F40E /* RARepoBitbucketResponseModel.swift */; };
+		DADD54CC26258537008079BA /* UIView+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADD54CB26258537008079BA /* UIView+Ex.swift */; };
+		DADD54CF262585E5008079BA /* UIEdgeInsets+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADD54CE262585E5008079BA /* UIEdgeInsets+Ex.swift */; };
+		DADD54D22625864C008079BA /* RABaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADD54D12625864C008079BA /* RABaseViewController.swift */; };
+		DADD54D62625869E008079BA /* RATableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADD54D52625869E008079BA /* RATableViewCell.swift */; };
+		DADD54D9262587E4008079BA /* RABaseInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADD54D8262587E4008079BA /* RABaseInteractor.swift */; };
+		DADD54DC26258885008079BA /* UIFont+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADD54DB26258885008079BA /* UIFont+Ex.swift */; };
+		DADD54E626259685008079BA /* RAView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADD54E526259685008079BA /* RAView.swift */; };
+		DADD54ED26259AC2008079BA /* RARepositoriesDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADD54EC26259AC2008079BA /* RARepositoriesDetailsViewController.swift */; };
+		DADD54F126259F02008079BA /* RARepoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADD54F026259F02008079BA /* RARepoViewModel.swift */; };
+		DADD54F52625A2F7008079BA /* RAInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADD54F42625A2F7008079BA /* RAInterface.swift */; };
+		DADD55012625ACD5008079BA /* Array+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADD55002625ACD5008079BA /* Array+Ex.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		28FA7E28FEE877D0549D652C /* Pods-RepoApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RepoApp.release.xcconfig"; path = "Target Support Files/Pods-RepoApp/Pods-RepoApp.release.xcconfig"; sourceTree = "<group>"; };
 		79D64C255A4DEEFE45D4F51A /* libPods-RepoApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RepoApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA25776B262743D4001930FE /* RAAlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RAAlertManager.swift; sourceTree = "<group>"; };
+		DA257778262754C3001930FE /* RADefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RADefaultsManager.swift; sourceTree = "<group>"; };
+		DA25777D26276A47001930FE /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		DA25778726276D6C001930FE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		DA25778A26276D6F001930FE /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		DA25778C26276EFA001930FE /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		DA25778D26276EFB001930FE /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Localizable.strings; sourceTree = "<group>"; };
+		DA2B7BEE26279867004713C2 /* UIColor+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ex.swift"; sourceTree = "<group>"; };
+		DA2B7BF22627A388004713C2 /* String+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ex.swift"; sourceTree = "<group>"; };
 		DA54B44B26247BCE00A8C3C6 /* RepoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RepoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA54B44E26247BCE00A8C3C6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DA54B45226247BCE00A8C3C6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DA54B45226247BCE00A8C3C6 /* RAListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RAListViewController.swift; sourceTree = "<group>"; };
 		DA54B45726247BCF00A8C3C6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DA54B45A26247BCF00A8C3C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DA54B45C26247BCF00A8C3C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DA893E932625D7CE0070F40E /* RAEmptyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RAEmptyListView.swift; sourceTree = "<group>"; };
+		DA893E962625D84D0070F40E /* RARepoListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RARepoListCell.swift; sourceTree = "<group>"; };
+		DA893E9A2625DA860070F40E /* RAViewWithStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RAViewWithStackView.swift; sourceTree = "<group>"; };
+		DA893E9E2625DB7A0070F40E /* UIStackView+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Ex.swift"; sourceTree = "<group>"; };
+		DA893EA22625DD4C0070F40E /* RALabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RALabel.swift; sourceTree = "<group>"; };
+		DA893EA52625DE240070F40E /* RADescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RADescriptionView.swift; sourceTree = "<group>"; };
+		DA893EA92625E1E40070F40E /* RAImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RAImageView.swift; sourceTree = "<group>"; };
+		DA893EAC2625F5160070F40E /* RAIconTitleDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RAIconTitleDescriptionView.swift; sourceTree = "<group>"; };
+		DA893EAF2625F7D60070F40E /* RATitleDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RATitleDescriptionView.swift; sourceTree = "<group>"; };
+		DA893EB22625F8530070F40E /* RATitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RATitleView.swift; sourceTree = "<group>"; };
+		DA893EB72626F0D30070F40E /* RARepoDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RARepoDetailsView.swift; sourceTree = "<group>"; };
+		DA893EBC2626FFA20070F40E /* RANetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RANetworking.swift; sourceTree = "<group>"; };
+		DA893EBF2627021C0070F40E /* RANetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RANetworkError.swift; sourceTree = "<group>"; };
+		DA893EC3262703520070F40E /* RANetworking+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RANetworking+Ex.swift"; sourceTree = "<group>"; };
+		DA893EC6262705A90070F40E /* RAReposListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RAReposListInteractor.swift; sourceTree = "<group>"; };
+		DA893EC9262720820070F40E /* RARepoGithubResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RARepoGithubResponseModel.swift; sourceTree = "<group>"; };
+		DA893ECC262721920070F40E /* RARepoBitbucketResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RARepoBitbucketResponseModel.swift; sourceTree = "<group>"; };
+		DADD54CB26258537008079BA /* UIView+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ex.swift"; sourceTree = "<group>"; };
+		DADD54CE262585E5008079BA /* UIEdgeInsets+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIEdgeInsets+Ex.swift"; sourceTree = "<group>"; };
+		DADD54D12625864C008079BA /* RABaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RABaseViewController.swift; sourceTree = "<group>"; };
+		DADD54D52625869E008079BA /* RATableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RATableViewCell.swift; sourceTree = "<group>"; };
+		DADD54D8262587E4008079BA /* RABaseInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RABaseInteractor.swift; sourceTree = "<group>"; };
+		DADD54DB26258885008079BA /* UIFont+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Ex.swift"; sourceTree = "<group>"; };
+		DADD54E526259685008079BA /* RAView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RAView.swift; sourceTree = "<group>"; };
+		DADD54EC26259AC2008079BA /* RARepositoriesDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RARepositoriesDetailsViewController.swift; sourceTree = "<group>"; };
+		DADD54F026259F02008079BA /* RARepoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RARepoViewModel.swift; sourceTree = "<group>"; };
+		DADD54F42625A2F7008079BA /* RAInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RAInterface.swift; sourceTree = "<group>"; };
+		DADD55002625ACD5008079BA /* Array+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Ex.swift"; sourceTree = "<group>"; };
 		FDE15B54A0F97A217C01ED9D /* Pods-RepoApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RepoApp.debug.xcconfig"; path = "Target Support Files/Pods-RepoApp/Pods-RepoApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -55,6 +125,30 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		DA25776926274360001930FE /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				DA25776B262743D4001930FE /* RAAlertManager.swift */,
+			);
+			path = Alert;
+			sourceTree = "<group>";
+		};
+		DA257777262754A2001930FE /* UserDefaults */ = {
+			isa = PBXGroup;
+			children = (
+				DA257778262754C3001930FE /* RADefaultsManager.swift */,
+			);
+			path = UserDefaults;
+			sourceTree = "<group>";
+		};
+		DA25778126276AEF001930FE /* Localizations */ = {
+			isa = PBXGroup;
+			children = (
+				DA25778826276D6C001930FE /* Localizable.strings */,
+			);
+			path = Localizations;
+			sourceTree = "<group>";
+		};
 		DA54B44226247BCE00A8C3C6 = {
 			isa = PBXGroup;
 			children = (
@@ -77,12 +171,197 @@
 			isa = PBXGroup;
 			children = (
 				DA54B44E26247BCE00A8C3C6 /* AppDelegate.swift */,
-				DA54B45226247BCE00A8C3C6 /* ViewController.swift */,
-				DA54B45726247BCF00A8C3C6 /* Assets.xcassets */,
-				DA54B45926247BCF00A8C3C6 /* LaunchScreen.storyboard */,
+				DA54B4762624BDCD00A8C3C6 /* Common */,
+				DA54B4752624BD9100A8C3C6 /* Features */,
+				DA54B4782624BE3700A8C3C6 /* Extentions */,
+				DA54B4772624BE2300A8C3C6 /* Resources */,
 				DA54B45C26247BCF00A8C3C6 /* Info.plist */,
 			);
 			path = RepoApp;
+			sourceTree = "<group>";
+		};
+		DA54B4752624BD9100A8C3C6 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				DA54B47C2624C17E00A8C3C6 /* Lists */,
+				DA54B47D2624C18A00A8C3C6 /* Details */,
+				DADD54F026259F02008079BA /* RARepoViewModel.swift */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		DA54B4762624BDCD00A8C3C6 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				DA257777262754A2001930FE /* UserDefaults */,
+				DA54B4852624C7B400A8C3C6 /* UI */,
+				DA54B4842624C7A900A8C3C6 /* Network */,
+				DA54B4872624CB6900A8C3C6 /* Navigation */,
+				DA25776926274360001930FE /* Alert */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		DA54B4772624BE2300A8C3C6 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DA25778126276AEF001930FE /* Localizations */,
+				DA54B45726247BCF00A8C3C6 /* Assets.xcassets */,
+				DA54B45926247BCF00A8C3C6 /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		DA54B4782624BE3700A8C3C6 /* Extentions */ = {
+			isa = PBXGroup;
+			children = (
+				DADD55002625ACD5008079BA /* Array+Ex.swift */,
+				DADD54DB26258885008079BA /* UIFont+Ex.swift */,
+				DADD54CE262585E5008079BA /* UIEdgeInsets+Ex.swift */,
+				DADD54CB26258537008079BA /* UIView+Ex.swift */,
+				DA893E9E2625DB7A0070F40E /* UIStackView+Ex.swift */,
+				DA2B7BEE26279867004713C2 /* UIColor+Ex.swift */,
+				DA2B7BF22627A388004713C2 /* String+Ex.swift */,
+			);
+			path = Extentions;
+			sourceTree = "<group>";
+		};
+		DA54B47C2624C17E00A8C3C6 /* Lists */ = {
+			isa = PBXGroup;
+			children = (
+				DA893E992625D8A50070F40E /* Models */,
+				DA54B4812624C20B00A8C3C6 /* Interactor */,
+				DADD54CA262583AE008079BA /* Cells */,
+				DA54B4802624C20400A8C3C6 /* Views */,
+				DA54B47E2624C19700A8C3C6 /* Controllers */,
+			);
+			path = Lists;
+			sourceTree = "<group>";
+		};
+		DA54B47D2624C18A00A8C3C6 /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				DA54B4882624CF9300A8C3C6 /* Views */,
+				DA54B4892624CF9900A8C3C6 /* Controllers */,
+			);
+			path = Details;
+			sourceTree = "<group>";
+		};
+		DA54B47E2624C19700A8C3C6 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DA54B45226247BCE00A8C3C6 /* RAListViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		DA54B4802624C20400A8C3C6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DA893E932625D7CE0070F40E /* RAEmptyListView.swift */,
+				DA893EAC2625F5160070F40E /* RAIconTitleDescriptionView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DA54B4812624C20B00A8C3C6 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				DA893EC6262705A90070F40E /* RAReposListInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		DA54B4822624C33D00A8C3C6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DA893EA22625DD4C0070F40E /* RALabel.swift */,
+				DA893EB22625F8530070F40E /* RATitleView.swift */,
+				DA893EA52625DE240070F40E /* RADescriptionView.swift */,
+				DADD54E526259685008079BA /* RAView.swift */,
+				DA893E9A2625DA860070F40E /* RAViewWithStackView.swift */,
+				DA893EA92625E1E40070F40E /* RAImageView.swift */,
+				DA893EAF2625F7D60070F40E /* RATitleDescriptionView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DA54B4832624C34500A8C3C6 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DADD54D12625864C008079BA /* RABaseViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		DA54B4842624C7A900A8C3C6 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				DADD54D8262587E4008079BA /* RABaseInteractor.swift */,
+				DA893EBC2626FFA20070F40E /* RANetworking.swift */,
+				DA893EBF2627021C0070F40E /* RANetworkError.swift */,
+				DA893EC3262703520070F40E /* RANetworking+Ex.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		DA54B4852624C7B400A8C3C6 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				DADD54D426258686008079BA /* Cells */,
+				DA54B4822624C33D00A8C3C6 /* Views */,
+				DA54B4832624C34500A8C3C6 /* Controllers */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		DA54B4872624CB6900A8C3C6 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				DADD54F42625A2F7008079BA /* RAInterface.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		DA54B4882624CF9300A8C3C6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DA893EB72626F0D30070F40E /* RARepoDetailsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DA54B4892624CF9900A8C3C6 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DADD54EC26259AC2008079BA /* RARepositoriesDetailsViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		DA893E992625D8A50070F40E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DA893EC9262720820070F40E /* RARepoGithubResponseModel.swift */,
+				DA893ECC262721920070F40E /* RARepoBitbucketResponseModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		DADD54CA262583AE008079BA /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				DA893E962625D84D0070F40E /* RARepoListCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		DADD54D426258686008079BA /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				DADD54D52625869E008079BA /* RATableViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,6 +406,8 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
+				pl,
 			);
 			mainGroup = DA54B44226247BCE00A8C3C6;
 			productRefGroup = DA54B44C26247BCE00A8C3C6 /* Products */;
@@ -144,6 +425,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA54B45B26247BCF00A8C3C6 /* LaunchScreen.storyboard in Resources */,
+				DA25778626276D6C001930FE /* Localizable.strings in Resources */,
 				DA54B45826247BCF00A8C3C6 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -180,18 +462,62 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA54B45326247BCE00A8C3C6 /* ViewController.swift in Sources */,
+				DA54B45326247BCE00A8C3C6 /* RAListViewController.swift in Sources */,
+				DA893EAD2625F5160070F40E /* RAIconTitleDescriptionView.swift in Sources */,
+				DA893EA62625DE240070F40E /* RADescriptionView.swift in Sources */,
+				DA893EC7262705A90070F40E /* RAReposListInteractor.swift in Sources */,
+				DA893EB02625F7D60070F40E /* RATitleDescriptionView.swift in Sources */,
+				DADD54CF262585E5008079BA /* UIEdgeInsets+Ex.swift in Sources */,
+				DA893E9B2625DA860070F40E /* RAViewWithStackView.swift in Sources */,
+				DADD54E626259685008079BA /* RAView.swift in Sources */,
+				DA893EB82626F0D30070F40E /* RARepoDetailsView.swift in Sources */,
 				DA54B44F26247BCE00A8C3C6 /* AppDelegate.swift in Sources */,
+				DADD54F126259F02008079BA /* RARepoViewModel.swift in Sources */,
+				DADD54CC26258537008079BA /* UIView+Ex.swift in Sources */,
+				DADD54D62625869E008079BA /* RATableViewCell.swift in Sources */,
+				DA893EBD2626FFA20070F40E /* RANetworking.swift in Sources */,
+				DA893ECD262721920070F40E /* RARepoBitbucketResponseModel.swift in Sources */,
+				DA2B7BF32627A388004713C2 /* String+Ex.swift in Sources */,
+				DA893E9F2625DB7A0070F40E /* UIStackView+Ex.swift in Sources */,
+				DA257779262754C3001930FE /* RADefaultsManager.swift in Sources */,
+				DA893E942625D7CE0070F40E /* RAEmptyListView.swift in Sources */,
+				DA893EAA2625E1E40070F40E /* RAImageView.swift in Sources */,
+				DA893ECA262720820070F40E /* RARepoGithubResponseModel.swift in Sources */,
+				DA893EC4262703520070F40E /* RANetworking+Ex.swift in Sources */,
+				DA2B7BEF26279867004713C2 /* UIColor+Ex.swift in Sources */,
+				DA25776C262743D4001930FE /* RAAlertManager.swift in Sources */,
+				DA893E972625D84D0070F40E /* RARepoListCell.swift in Sources */,
+				DA893EB32625F8530070F40E /* RATitleView.swift in Sources */,
+				DADD54ED26259AC2008079BA /* RARepositoriesDetailsViewController.swift in Sources */,
+				DADD55012625ACD5008079BA /* Array+Ex.swift in Sources */,
+				DADD54D9262587E4008079BA /* RABaseInteractor.swift in Sources */,
+				DADD54D22625864C008079BA /* RABaseViewController.swift in Sources */,
+				DADD54F52625A2F7008079BA /* RAInterface.swift in Sources */,
+				DADD54DC26258885008079BA /* UIFont+Ex.swift in Sources */,
+				DA893EC02627021C0070F40E /* RANetworkError.swift in Sources */,
+				DA893EA32625DD4C0070F40E /* RALabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		DA25778826276D6C001930FE /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DA25778726276D6C001930FE /* en */,
+				DA25778A26276D6F001930FE /* ru */,
+				DA25778D26276EFB001930FE /* pl */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		DA54B45926247BCF00A8C3C6 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				DA54B45A26247BCF00A8C3C6 /* Base */,
+				DA25777D26276A47001930FE /* ru */,
+				DA25778C26276EFA001930FE /* pl */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -203,6 +529,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -264,6 +591,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -324,7 +652,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B7M3FL53D4;
 				INFOPLIST_FILE = RepoApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -345,7 +673,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B7M3FL53D4;
 				INFOPLIST_FILE = RepoApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
