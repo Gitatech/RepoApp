@@ -51,7 +51,7 @@ class RABaseViewController: UIViewController {
         return view
     }()
 
-    
+    // MARK: - Initialization
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
