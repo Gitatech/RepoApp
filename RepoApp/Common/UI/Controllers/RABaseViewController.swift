@@ -51,7 +51,7 @@ class RABaseViewController: UIViewController {
         return view
     }()
 
-    // MARK: - Initialization
+    
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
@@ -73,6 +73,7 @@ class RABaseViewController: UIViewController {
         self.makeConstraints()
     }
 
+    // MARK: - Initial Controller
     func initController() { }
 
     // MARK: - Constraints
